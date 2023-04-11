@@ -15,4 +15,8 @@ export default [
   { key: "Payment" },
   { key: "ComingSoon" },
   { key: "Home" },
+  { key: "Cart" },
+  { key: "Cartegory" },
+  { key: "Checkout" },
+  { key: "ProductDetail" },
 ];
