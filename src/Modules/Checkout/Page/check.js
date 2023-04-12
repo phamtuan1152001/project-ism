@@ -1,53 +1,53 @@
 ﻿import React from "react"
 
-const check = () => {
-    return
+const Check = () => {
+    return(
     <>
         <h2>Checkout</h2>
-        <div class="container">
-            <div class="cart-top-wrap">
-                <div class="cart-top">
-                    <div class="cart-top-cart cart-top-item">
-                        <i class='bx bxs-cart'></i>
+        <div className="container">
+            <div className="cart-top-wrap">
+                <div className="cart-top">
+                    <div className="cart-top-cart cart-top-item">
+                        <i className='bx bxs-cart'></i>
                     </div>
-                    <div class="cart-top-payment cart-top-item">
-                        <i class='bx bx-credit-card-front'></i>
+                    <div className="cart-top-payment cart-top-item">
+                        <i className='bx bx-credit-card-front'></i>
                     </div>
                 </div>
             </div>
 
-            <div class="checkout">
-                <div class="payship">
-                    <div class="paymentmethod">
+            <div className="checkout">
+                <div className="payship">
+                    <div className="paymentmethod">
                         <h4>Payment Method</h4><br />
                         <form>
-                            <label class="credit-card-inputs">
+                            <label className="credit-card-inputs">
                                 <input type="radio" name="payment_method" value="credit_card"></input>
                                 Credit Card
                             </label>
-                            <div class="payment_info credit_card">
-                                <div class="creditinfo">
+                            <div className="payment_info credit_card">
+                                <div className="creditinfo">
                                     <h5>CARD DETAIL</h5>
-                                    <input class="cardnum" type="text" id="card-number" name="card-number" placeholder="Card Number*"></input>
-                                    <input class="expired" type="text" id="exp-date" name="exp-date" placeholder="Expiration*"></input>
-                                    <input class="cvv" type="text" id="cvv" name="cvv" placeholder="CVV*"></input>
+                                    <input className="cardnum" type="text" id="card-number" name="card-number" placeholder="Card Number*"></input>
+                                    <input className="expired" type="text" id="exp-date" name="exp-date" placeholder="Expiration*"></input>
+                                    <input className="cvv" type="text" id="cvv" name="cvv" placeholder="CVV*"></input>
                                 </div>
                             </div>
-                            <label class="momo-qr-code">
+                            <label className="momo-qr-code">
                                 <input type="radio" name="payment_method" value="momo"></input>
                                 Momo
                             </label>
-                            <div class="payment_info momo">
+                            <div className="payment_info momo">
                                 <img src="TEST/images/qr.png"></img>
                             </div>
                         </form>
                     </div>
 
-                    <div class="delivery">
+                    <div className="delivery">
                         <h4>Delivery</h4>
-                        <div class="address">
+                        <div className="address">
                             <p>Khu phố 6, Phường Linh Trung, Quận Thủ Đức, Thành phố Hồ Chí Minh</p>
-                            <div class="changeaddress">
+                            <div className="changeaddress">
                                 <input type="text" id="address" placeholder="Type another address"></input>
                                 <button>Change</button>
                             </div>
@@ -55,7 +55,7 @@ const check = () => {
                     </div>
                 </div>
 
-                <div class="placeorder">
+                <div className="placeorder">
                     <h3>CHECK OUT</h3>
                     <table>
                         <tr>
@@ -96,14 +96,14 @@ const check = () => {
                         </tr>
 
                     </table>
-                    <div class="placeorder-button">
+                    <div className="placeorder-button">
                         <button type="submit">Place Order</button>
                     </div>
                 </div>
             </div>
         </div>
     </>
-        ;
+        );
 };
 
-export default check;
+export default Check;

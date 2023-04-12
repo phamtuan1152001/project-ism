@@ -5,14 +5,15 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCodeLanguage } from "@store/common/selectors";
 import queryString from "query-string";
-import { getDataHomeAction } from "@Modules/ProductDetail/Store/actions";
+import { getDataHomeAction } from "@Modules/Home/Store/actions";
 import {
   getDataHome,
   getLoadingDataHomeSelector,
-} from "@Modules/ProductDetail/Store/selectors";
+} from "@Modules/Home/Store/selectors";
 import { useHistory, useLocation } from "react-router";
+import Product from "./product";
 
-const ProductDetail = () => {
+const Home = () => {
   const dispatch = useDispatch();
   const codeLanguage = useSelector((state) => getCodeLanguage(state));
   const formData = useSelector((state) => getDataHome(state));
@@ -39,6 +40,6 @@ const ProductDetail = () => {
     dispatch(getDataHomeAction());
   }, [codeLanguage]);
 
-  return <div className="product__page"></div>;
+  return <div className="product__page"><Product/></div>;
 };
-export default ProductDetail;
+export default Home;

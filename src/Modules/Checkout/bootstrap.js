@@ -4,9 +4,9 @@ import initReducer from './Store/initReducer';
 import initSagas from './Store/initSagas';
 
 export default {
-  name: 'Home',
-  dir: 'Home',
-  pathRoot: '',
+  name: 'Checkout',
+  dir: 'Checkout',
+  pathRoot: 'Checkout',
   routes: [
     {
       url: '',

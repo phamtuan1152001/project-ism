@@ -4,9 +4,9 @@ import initReducer from './Store/initReducer';
 import initSagas from './Store/initSagas';
 
 export default {
-  name: 'Home',
-  dir: 'Home',
-  pathRoot: '',
+  name: 'Cart',
+  dir: 'Cart',
+  pathRoot: 'Cart',
   routes: [
     {
       url: '',
@@ -16,7 +16,7 @@ export default {
       },
       props: {
         title: 'Trang chủ | Hita Camp',
-        titleI18n: 'Home:title',
+        titleI18n: 'Cart:title',
         headerStyle: 'fill',
         exact: true,
       },
