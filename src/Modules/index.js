@@ -16,7 +16,7 @@ export default [
   { key: "ComingSoon" },
   { key: "Home" },
   { key: "Cart" },
-  { key: "Cartegory" },
+  { key: "Category" },
   { key: "Checkout" },
   { key: "ProductDetail" },
 ];

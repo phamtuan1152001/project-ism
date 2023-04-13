@@ -9,7 +9,7 @@ export default {
   pathRoot: '',
   routes: [
     {
-      url: 'product',
+      url: '',
       component: 'Page/index',
       meta: {
         authRoute: true,

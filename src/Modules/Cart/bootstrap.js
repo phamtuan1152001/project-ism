@@ -6,11 +6,11 @@ import initSagas from './Store/initSagas';
 export default {
   name: 'Cart',
   dir: 'Cart',
-  pathRoot: 'Cart',
+  pathRoot: 'cart',
   routes: [
     {
       url: '',
-      component: 'Page/index',
+      component: 'Page/Cart',
       meta: {
         authRoute: true,
       },
