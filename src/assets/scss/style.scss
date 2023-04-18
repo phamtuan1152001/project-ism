@@ -241,9 +241,6 @@ option {
 			// z-index: 3;
 		}
 	}
-	.select__menu {
-		// z-index: 3;
-	}
 }
 .select__placeholder {
 	color: #acbcc4 !important;
@@ -301,11 +298,6 @@ option {
 		background: #ea5023 !important;
 		color: #fee6cf !important;
 	}
-}
-.container-fluid {
-	//use perfect scrollbar
-	// max-height: calc(100vh - 100px) !important;
-	// overflow-y: scroll;
 }
 
 .nav-item-bottom {
@@ -700,8 +692,6 @@ option {
 }
 .Toastify__toast--warning {
 	background: #f1c40f;
-	.Toastify__toast-body {
-	}
 }
 
 .Toastify__toast--error {
