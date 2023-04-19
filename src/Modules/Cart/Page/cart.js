@@ -1,8 +1,12 @@
-import React from "react"
+import React from "react";
+import "../bootstrap.scss";
+import Product1 from '@src/assets/images/product-1.jpg';
+import Product2 from '@src/assets/images/product-2.jpg';
+import colorProduct from '@src/assets/images/color.png';
 
 const Cart = () => {
     return (
-        <div className="cart">
+        <div className="cartfull">
             <div className="cart-top-wrap">
                 <div className="cart-top">
                     <div className="cart-top-cart cart-top-item">
@@ -31,9 +35,9 @@ const Cart = () => {
                         </tr>
                         <tr>
                             <td><input type="checkbox" checked /></td>
-                            <td><img src="TEST/images/product-1.jpg" alt="" /></td>
+                            <td><img src={Product1} alt="" /></td>
                             <td><p>MO231 - Pomeranian White</p></td>
-                            <td><img src="TEST/images/color.png" alt="" /></td>
+                            <td><img src={colorProduct} alt="" /></td>
                             <td><p>Male</p></td>
                             <td><p>02 months</p></td>
                             <td><input type="number" value="1" min="1" /></td>
@@ -43,9 +47,9 @@ const Cart = () => {
                         </tr>
                         <tr>
                             <td><input type="checkbox" /></td>
-                            <td><img src="TEST/images/product-2.jpg" alt="" /></td>
+                            <td><img src={Product2} alt="" /></td>
                             <td><p>MO502 - Poodle Tiny Yellow</p></td>
-                            <td><img src="TEST/images/color.png" alt="" /></td>
+                            <td><img src={colorProduct} alt="" /></td>
                             <td><p>Female</p></td>
                             <td><p>02 months</p></td>
                             <td><input type="number" value="1" min="1" /></td>

@@ -132,7 +132,7 @@ const Cate = () => {
                 </div>
 
                 <div className="product-category">
-                    <div className="small-container">
+                    <div className="containery">
                         <div className="container">
                             <div className="title"><h3>Small Dog</h3></div>
                             <div className="list"><h5>52 puppies</h5></div>
@@ -147,15 +147,15 @@ const Cate = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="frames-container">
+                    <div className="framescontainer">
                         <div className="frame">
                             <div className="col-4">
                                 <img src={Thumbnail1}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO231 - Pomeranian White</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -176,9 +176,9 @@ const Cate = () => {
                                 <img src={Thumbnail2}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO502 - Poodle Tiny Yellow</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Female</p>
@@ -199,9 +199,9 @@ const Cate = () => {
                                 <img src={Thumbnail3}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO102 - Poodle Tiny Sepia</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -222,9 +222,9 @@ const Cate = () => {
                                 <img src={Thumbnail4}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO231 - Pomeranian White</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -245,9 +245,9 @@ const Cate = () => {
                                 <img src={Thumbnail5}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO502 - Poodle Tiny Yellow</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Female</p>
@@ -268,9 +268,9 @@ const Cate = () => {
                                 <img src={Product1}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO102 - Poodle Tiny Sepia</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -291,9 +291,9 @@ const Cate = () => {
                                 <img src={Product2}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO231 - Pomeranian White</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -314,9 +314,9 @@ const Cate = () => {
                                 <img src={Product3}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO502 - Poodle Tiny Yellow</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Female</p>
@@ -337,9 +337,9 @@ const Cate = () => {
                                 <img src={Product4}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO102 - Poodle Tiny Sepia</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -360,9 +360,9 @@ const Cate = () => {
                                 <img src={Product5}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO231 - Pomeranian White</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -383,9 +383,9 @@ const Cate = () => {
                                 <img src={Product6}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO502 - Poodle Tiny Yellow</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Female</p>
@@ -406,9 +406,9 @@ const Cate = () => {
                                 <img src={Product7}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO102 - Poodle Tiny Sepia</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -429,9 +429,9 @@ const Cate = () => {
                                 <img src={Product8}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO231 - Pomeranian White</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
@@ -452,9 +452,9 @@ const Cate = () => {
                                 <img src={Product9}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO502 - Poodle Tiny Yellow</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Female</p>
@@ -475,9 +475,9 @@ const Cate = () => {
                                 <img src={Product10}></img>
                             </div>
                             <div className="row">
-                                <div className="row-text">
+                                <div className="rowtext">
                                     <h1 className="name">MO102 - Poodle Tiny Sepia</h1>
-                                    <div className="row-description">
+                                    <div className="rowdescription">
                                         <div className="first-des">
                                             <p className="thh">Gene:</p>
                                             <p className="tdd">Male  </p>
