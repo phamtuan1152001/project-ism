@@ -1,9 +1,12 @@
 ﻿import React from "react"
+import "../bootstrap.scss";
+import QRcode from '@src/assets/images/qr.png';
+
 
 const Check = () => {
     return (
-        <>
-            <h2>Checkout</h2>
+        <div className="PayMoney">
+            <h3>Checkout</h3>
             <div className="container">
                 <div className="cart-top-wrap">
                     <div className="cart-top">
@@ -38,7 +41,7 @@ const Check = () => {
                                     Momo
                                 </label>
                                 <div className="payment_info momo">
-                                    <img src="TEST/images/qr.png"></img>
+                                    <img src={QRcode}></img>
                                 </div>
                             </form>
                         </div>
@@ -114,7 +117,7 @@ const Check = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

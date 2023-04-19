@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "../bootstrap.scss";
 import Thumbnail1 from '@src/assets/images/gallery-1.jpg';
 import Thumbnail2 from '@src/assets/images/gallery-2.jpg';

@@ -1,8 +1,24 @@
-import React from "react"
+import React from "react";
+import "../bootstrap.scss";
+import Thumbnail1 from '@src/assets/images/gallery-1.jpg';
+import Thumbnail2 from '@src/assets/images/gallery-2.jpg';
+import Thumbnail3 from '@src/assets/images/gallery-3.jpg';
+import Thumbnail4 from '@src/assets/images/gallery-4.jpg';
+import Thumbnail5 from '@src/assets/images/ball.png';
+import Product1 from '@src/assets/images/product-1.jpg';
+import Product2 from '@src/assets/images/product-2.jpg';
+import Product3 from '@src/assets/images/product-3.jpg';
+import Product4 from '@src/assets/images/product-4.jpg';
+import Product5 from '@src/assets/images/product-5.jpg';
+import Product6 from '@src/assets/images/product-6.jpg';
+import Product7 from '@src/assets/images/product-7.jpg';
+import Product8 from '@src/assets/images/product-8.jpg';
+import Product9 from '@src/assets/images/product-9.jpg';
+import Product10 from '@src/assets/images/product-10.jpg';
 
 const Cate = () => {
     return (
-        <>
+        <div className="Category">
             <div className="banner">
                 <div className="breadcrumbs">
                     <a href="#">Home</a>
@@ -134,7 +150,7 @@ const Cate = () => {
                     <div className="frames-container">
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Thumbnail1}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -157,7 +173,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Thumbnail2}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -180,7 +196,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Thumbnail3}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -203,7 +219,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Thumbnail4}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -226,7 +242,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Thumbnail5}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -249,7 +265,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product1}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -272,7 +288,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product2}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -295,7 +311,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product3}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -318,7 +334,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product4}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -341,7 +357,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product5}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -364,7 +380,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product6}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -387,7 +403,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product7}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -410,7 +426,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product8}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -433,7 +449,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product9}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -456,7 +472,7 @@ const Cate = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src="assets/images/ball.png"></img>
+                                <img src={Product10}></img>
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -491,7 +507,7 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
