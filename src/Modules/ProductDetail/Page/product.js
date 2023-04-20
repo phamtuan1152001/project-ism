@@ -11,7 +11,7 @@ const Product = () => {
     return (
         <div className="productdetail">
             <div className="single-product">
-                <ImageGallery/>
+                <ImageGallery />
                 <div className="col-22">
                     <div className="breadcrumbs">
                         <a href="#">Home</a>
@@ -72,7 +72,7 @@ const Product = () => {
                     </table>
                 </div>
             </div>
-            <Gallery/>
+            <Gallery />
             <div className="offer">
                 <div className="small-container">
                     <h3>Whats new?</h3>
@@ -80,7 +80,7 @@ const Product = () => {
                     <div className="frames-container">
                         <div className="frame">
                             <div className="col-4">
-                                <img src={Product7}/>
+                                <img src={Product7} />
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -103,7 +103,7 @@ const Product = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src={Product8}/>
+                                <img src={Product8} />
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -126,7 +126,7 @@ const Product = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src={Product9}/>
+                                <img src={Product9} />
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -149,7 +149,7 @@ const Product = () => {
 
                         <div className="frame">
                             <div className="col-4">
-                                <img src={Product10}/>
+                                <img src={Product10} />
                             </div>
                             <div className="row">
                                 <div className="row-text">
@@ -176,7 +176,7 @@ const Product = () => {
             <a href="#" className="scroll-top"><i className='bx bxl-messenger'></i></a>
 
             <div className="end-text">
-                <p>� late 2022 Tahmid Ahmed. All Rights Reserved.</p>
+                <p>© late 2022 Tahmid Ahmed. All Rights Reserved.</p>
             </div>
         </div>
     );
