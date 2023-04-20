@@ -1,7 +1,6 @@
 ﻿import React from "react"
 import "../bootstrap.scss";
-import QRcode from '@src/assets/images/qr.png';
-
+import PaymentForm from '@src/Modules/Checkout/components/PaymentForm.js';
 
 const Check = () => {
     return (
@@ -21,31 +20,7 @@ const Check = () => {
 
                 <div className="checkout">
                     <div className="payship">
-                        <div className="paymentmethod">
-                            <h4>Payment Method</h4><br />
-                            <form>
-                                <label className="credit-card-inputs">
-                                    <input type="radio" name="payment_method" value="credit_card" />
-                                    Credit Card
-                                </label>
-                                <div className="payment_info credit_card">
-                                    <div className="creditinfo">
-                                        <h5>CARD DETAIL</h5>
-                                        <input className="cardnum" type="text" id="card-number" name="card-number" placeholder="Card Number*" />
-                                        <input className="expired" type="text" id="exp-date" name="exp-date" placeholder="Expiration*" />
-                                        <input className="cvv" type="text" id="cvv" name="cvv" placeholder="CVV*" />
-                                    </div>
-                                </div>
-                                <label className="momo-qr-code">
-                                    <input type="radio" name="payment_method" value="momo" />
-                                    Momo
-                                </label>
-                                <div className="payment_info momo">
-                                    <img src={QRcode}></img>
-                                </div>
-                            </form>
-                        </div>
-
+                        <PaymentForm />
                         <div className="delivery">
                             <h4>Delivery</h4>
                             <div className="address">

@@ -1,5 +1,6 @@
 import React from "react";
 import "../bootstrap.scss";
+import Pagination from '@src/Modules/Category/components/Pagination.js';
 import Thumbnail1 from '@src/assets/images/gallery-1.jpg';
 import Thumbnail2 from '@src/assets/images/gallery-2.jpg';
 import Thumbnail3 from '@src/assets/images/gallery-3.jpg';
@@ -493,18 +494,7 @@ const Cate = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="fullpage">
-                        <div className="pagination">
-                            <a href="#" className="prev">�</a>
-                            <span className="page active">1</span>
-                            <span className="page">2</span>
-                            <span className="page">3</span>
-                            <span className="page">4</span>
-                            <span className="ellipsis">...</span>
-                            <span className="page">28</span>
-                            <a href="#" className="next">�</a>
-                        </div>
-                    </div>
+                    <Pagination />
                 </div>
             </div>
         </div>
