@@ -10,7 +10,7 @@ export default {
   routes: [
     {
       url: '',
-      component: 'Page/Cate',
+      component: 'Page/Categories',
       meta: {
         authRoute: true,
       },

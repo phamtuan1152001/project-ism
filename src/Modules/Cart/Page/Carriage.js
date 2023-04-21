@@ -4,7 +4,7 @@ import CartTop from "../components/CartTop";
 import CartContentLeft from "../components/CartContentLeft/CartContentLeft.js";
 import CartContentRight from "../components/CartContentRight";
 
-const Cart = () => {
+const Carriage = () => {
     return (
         <div className="cartfull">
             <CartTop />
@@ -16,4 +16,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default Carriage;

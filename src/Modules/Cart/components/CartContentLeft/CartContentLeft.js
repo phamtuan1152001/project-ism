@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product/Product.js";
+import CartProduct from "./Product/CartProduct.js";
 import Product1 from '@src/assets/images/product-1.jpg';
 import Product2 from '@src/assets/images/product-2.jpg';
 import colorProduct from '@src/assets/images/color.png';
@@ -12,7 +12,6 @@ const CartContentLeft = () => {
             colorSrc: colorProduct,
             gender: 'Male',
             age: '02 months',
-            quantity: 1,
             price: '6.900.000 VND'
         },
         {
@@ -21,7 +20,6 @@ const CartContentLeft = () => {
             colorSrc: colorProduct,
             gender: 'Female',
             age: '02 months',
-            quantity: 1,
             price: '3.900.000 VND'
         }
     ];
@@ -43,7 +41,7 @@ const CartContentLeft = () => {
 
                     </tr>
                     {products.map((product, index) => (
-                        <Product key={index} {...product} />
+                        <CartProduct key={index} {...product} />
                     ))}
                 </tbody>
             </table>

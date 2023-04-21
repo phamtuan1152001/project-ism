@@ -10,7 +10,7 @@ export default {
   routes: [
     {
       url: '',
-      component: 'Page/Product',
+      component: 'Page/ProductDetails',
       meta: {
         authRoute: true,
       },

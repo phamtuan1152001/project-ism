@@ -1,8 +1,8 @@
-﻿import React from "react"
+import React from "react"
 import "../bootstrap.scss";
 import PaymentForm from '@src/Modules/Checkout/components/PaymentForm.js';
 
-const Check = () => {
+const CheckOut = () => {
     return (
         <div className="PayMoney">
             <h3>Checkout</h3>
@@ -96,4 +96,4 @@ const Check = () => {
     );
 };
 
-export default Check;
+export default CheckOut;

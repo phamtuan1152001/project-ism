@@ -42,8 +42,8 @@ function Pagination() {
     return (
         <div className="fullpage">
             <div className="pagination">
-                <span className="page" onClick={() => setCurrentPage(1)}>«</span>
-                <span href="#" className="prev" onClick={handlePrevClick}>❰</span>
+                <span className="page" onClick={() => setCurrentPage(1)}><i class='bx bx-chevrons-left' ></i></span>
+                <span href="#" className="prev" onClick={handlePrevClick}><i class='bx bx-left-arrow-alt' ></i></span>
                 {displayPages.map((page) => {
                     if (page === 1 || page === pages.length || (page >= currentPage - 1 && page <= currentPage + 1)) {
                         return (
@@ -61,8 +61,8 @@ function Pagination() {
                         return null;
                     }
                 })}
-                <span href="#" className="next" onClick={handleNextClick}>❱</span>
-                <span className="page" onClick={() => setCurrentPage(pages.length)}>»</span>
+                <span href="#" className="next" onClick={handleNextClick}><i class='bx bx-right-arrow-alt'></i></span>
+                <span className="page" onClick={() => setCurrentPage(pages.length)}><i class='bx bx-chevrons-right' ></i></span>
             </div>
         </div>
     );

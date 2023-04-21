@@ -10,7 +10,7 @@ export default {
   routes: [
     {
       url: '',
-      component: 'Page/Cart',
+      component: 'Page/Carriage',
       meta: {
         authRoute: true,
       },

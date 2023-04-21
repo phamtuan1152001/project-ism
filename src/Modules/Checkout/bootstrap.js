@@ -10,7 +10,7 @@ export default {
   routes: [
     {
       url: '',
-      component: 'Page/Check',
+      component: 'Page/CheckOut',
       meta: {
         authRoute: true,
       },
