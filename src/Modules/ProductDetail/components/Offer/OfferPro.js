@@ -1,35 +1,35 @@
 import React from "react";
 import OfferProduct from "./Product/OfferProduct";
-import Product7 from '@src/assets/images/product-7.jpg';
-import Product8 from '@src/assets/images/product-8.jpg';
-import Product9 from '@src/assets/images/product-9.jpg';
-import Product10 from '@src/assets/images/product-10.jpg';
+import Product2 from '@src/assets/images/Product/Product2-Gallery1.png';
+import Product3 from '@src/assets/images/Product/Product3-Gallery1.png';
+import Product4 from '@src/assets/images/Product/Product4-Gallery1.png';
+import Product5 from '@src/assets/images/Product/Product5-Gallery1.png';
 
 const OfferPro = () => {
     const products = [
         {
-            imgSrc: Product7,
+            imgSrc: Product2,
             name: 'MO231 - Pomeranian White',
             gender: 'Male',
             age: '02 months',
             price: '6.900.000 VND'
         },
         {
-            imgSrc: Product8,
+            imgSrc: Product3,
             name: 'MO502 - Poodle Tiny Yellow',
             gender: 'Female',
             age: '02 months',
             price: '3.900.000 VND'
         },
         {
-            imgSrc: Product9,
+            imgSrc: Product4,
             name: 'MO102 - Poodle Tiny Sepia',
             gender: 'Male',
             age: '02 months',
             price: '4.000.000 VND'
         },
         {
-            imgSrc: Product10,
+            imgSrc: Product5,
             name: 'MO512 - Alaskan Malamute Grey',
             gender: 'Male',
             age: '02 months',

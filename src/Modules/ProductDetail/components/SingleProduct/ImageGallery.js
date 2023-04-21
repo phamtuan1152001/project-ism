@@ -1,37 +1,37 @@
 import React, { useState } from "react";
-import Thumbnail1 from '@src/assets/images/gallery-1.jpg';
-import Thumbnail2 from '@src/assets/images/gallery-2.jpg';
-import Thumbnail3 from '@src/assets/images/gallery-3.jpg';
-import Thumbnail4 from '@src/assets/images/gallery-4.jpg';
-import Thumbnail5 from '@src/assets/images/ball.png';
-import Thumbnail6 from '@src/assets/images/book.png';
-import Thumbnail7 from '@src/assets/images/child.png';
+import Gallery1 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery1.png';
+import Gallery2 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery2.png';
+import Gallery3 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery3.png';
+import Gallery4 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery4.png';
+import Gallery5 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery5.png';
+import Gallery6 from '@src/Modules/ProductDetail/assets/images/Gallery/Product1-Gallery6.png';
+import CertificationID from '@src/Modules/ProductDetail/assets/images/Certification/Certification-ID.png';
+import CertificationHealth from '@src/Modules/ProductDetail/assets/images/Certification/CertificationHealth.png';
 
 function ImageGallery() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const thumbnails = [
-    Thumbnail1,
-    Thumbnail2,
-    Thumbnail3,
-    Thumbnail4,
-    Thumbnail5,
-    Thumbnail6,
-    Thumbnail7
+  const galleries = [
+    Gallery1,
+    Gallery2,
+    Gallery3,
+    Gallery4,
+    Gallery5,
+    Gallery6,
   ];
 
   function displayImage() {
     const mainImage = document.querySelector(".main-image img");
     // Change the main image source
-    mainImage.src = thumbnails[currentImageIndex];
+    mainImage.src = galleries[currentImageIndex];
 
-    // Remove the active class from all thumbnails
+    // Remove the active class from all galleries
     const thumbnailElems = document.querySelectorAll(".small-img-row img");
     thumbnailElems.forEach((thumbnailElem) => {
       thumbnailElem.classList.remove("active");
     });
 
-    // Add the active class to the current thumbnail
+    // Add the active class to the current gallery
     thumbnailElems[currentImageIndex].classList.add("active");
   }
 
@@ -39,7 +39,7 @@ function ImageGallery() {
     setCurrentImageIndex((prevIndex) => {
       let newIndex = prevIndex - 1;
       if (newIndex < 0) {
-        newIndex = thumbnails.length - 1;
+        newIndex = galleries.length - 1;
       }
       return newIndex;
     });
@@ -48,7 +48,7 @@ function ImageGallery() {
   function goToNextImage() {
     setCurrentImageIndex((prevIndex) => {
       let newIndex = prevIndex + 1;
-      if (newIndex >= thumbnails.length) {
+      if (newIndex >= galleries.length) {
         newIndex = 0;
       }
       return newIndex;
@@ -59,7 +59,7 @@ function ImageGallery() {
     <div className="col-2">
         <div className="container">
             <div className="main-image">
-                <img src={thumbnails[currentImageIndex]} width="100%" id="ProductImg" alt="Large Image"></img>
+                <img src={galleries[currentImageIndex]} width="100%" id="ProductImg" alt="Large Image"></img>
             </div>
             <div className="button-container">
                 <button id="prev-btn" onClick={goToPreviousImage}><i className='bx bxs-chevron-left'></i></button>
@@ -67,7 +67,7 @@ function ImageGallery() {
             </div>
         </div>
         <div className="small-img-row">
-            {thumbnails.map((thumbnail, index) => (
+            {galleries.map((thumbnail, index) => (
                     <img
                         key={index}
                         src={thumbnail}
@@ -78,8 +78,8 @@ function ImageGallery() {
                     ))}
         </div>
         <div className="certification">
-            <p><i className='bx bxs-heart'></i>100% health guarantee for pets</p>
-            <p><i className='bx bxs-dog'></i>100% guarantee of pet identification</p>
+            <p><img src={CertificationHealth} alt="Certification"></img>100% health guarantee for pets</p>
+            <p><img src={CertificationID} alt="Certification"></img>100% guarantee of pet identification</p>
         </div>
         <div className="contact-box">
             <div className="share-box" style={{ display: "inline-flex" }}>

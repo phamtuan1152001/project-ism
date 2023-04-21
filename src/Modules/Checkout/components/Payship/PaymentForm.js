@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import QRcode from '@src/assets/images/qr.png';
+import QRcode from '@src/Modules/Checkout/assets/images/qr.png';
 
 const PaymentForm = () => {
     const [selectedOption, setSelectedOption] = useState('');

@@ -1,8 +1,8 @@
 import React from "react";
 import CartProduct from "./Product/CartProduct.js";
-import Product1 from '@src/assets/images/product-1.jpg';
-import Product2 from '@src/assets/images/product-2.jpg';
-import colorProduct from '@src/assets/images/color.png';
+import Product1 from '@src/assets/images/Product/Product1-Gallery1.png';
+import Product2 from '@src/assets/images/Product/Product2-Gallery1.png';
+import colorProduct from '@src/Modules/Cart/assets/images/Color/color.png';
 
 const CartContentLeft = () => {
     const products = [

@@ -1,7 +1,7 @@
 import React from "react";
 import "../bootstrap.scss";
 import SinglePro from "@src/Modules/ProductDetail/components/SingleProduct/SinglePro.js";
-import Gallery from "@src/Modules/ProductDetail/components/Gallery/Gallery.js";
+import Gallery from "@src/Modules/ProductDetail/components/Customer/Gallery.js";
 import OfferPro from "../components/Offer/OfferPro";
 
 const ProductDetails = () => {

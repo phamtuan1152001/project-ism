@@ -1,21 +1,22 @@
 import React from "react";
 import Pagination from '@src/Modules/Category/components/Pagigation/Pagination.js';
 import CategoryProduct from "./Product/CategoryProduct";
-import Thumbnail1 from '@src/assets/images/gallery-1.jpg';
-import Thumbnail2 from '@src/assets/images/gallery-2.jpg';
-import Thumbnail3 from '@src/assets/images/gallery-3.jpg';
-import Thumbnail4 from '@src/assets/images/gallery-4.jpg';
-import Thumbnail5 from '@src/assets/images/ball.png';
-import Product1 from '@src/assets/images/product-1.jpg';
-import Product2 from '@src/assets/images/product-2.jpg';
-import Product3 from '@src/assets/images/product-3.jpg';
-import Product4 from '@src/assets/images/product-4.jpg';
-import Product5 from '@src/assets/images/product-5.jpg';
-import Product6 from '@src/assets/images/product-6.jpg';
-import Product7 from '@src/assets/images/product-7.jpg';
-import Product8 from '@src/assets/images/product-8.jpg';
-import Product9 from '@src/assets/images/product-9.jpg';
-import Product10 from '@src/assets/images/product-10.jpg';
+
+import Product1 from '@src/assets/images/Product/Product1-Gallery1.png';
+import Product2 from '@src/assets/images/Product/Product2-Gallery1.png';
+import Product3 from '@src/assets/images/Product/Product3-Gallery1.png';
+import Product4 from '@src/assets/images/Product/Product4-Gallery1.png';
+import Product5 from '@src/assets/images/Product/Product5-Gallery1.png';
+import Product6 from '@src/assets/images/Product/Product6-Gallery1.png';
+import Product7 from '@src/assets/images/Product/Product7-Gallery1.png';
+import Product8 from '@src/assets/images/Product/Product8-Gallery1.png';
+import Product9 from '@src/assets/images/Product/Product9-Gallery1.png';
+import Product10 from '@src/assets/images/Product/Product10-Gallery1.png';
+import Product11 from '@src/assets/images/Product/Product11-Gallery1.png';
+import Product12 from '@src/assets/images/Product/Product12-Gallery1.png';
+import Product13 from '@src/assets/images/Product/Product13-Gallery1.png';
+import Product14 from '@src/assets/images/Product/Product14-Gallery1.png';
+import Product15 from '@src/assets/images/Product/Product15-Gallery1.png';
 
 const CatePro = () => {
     const products = [
@@ -90,35 +91,35 @@ const CatePro = () => {
             price: '3.900.000 VND'
         },
         {
-            imgSrc: Thumbnail1,
+            imgSrc: Product11,
             name: 'MO102 - Poodle Tiny Sepia',
             gender: 'Male',
             age: '02 months',
             price: '4.000.000 VND'
         },
         {
-            imgSrc: Thumbnail2,
+            imgSrc: Product12,
             name: 'MO512 - Alaskan Malamute Grey',
             gender: 'Male',
             age: '02 months',
             price: '8.900.000 VND'
         },
         {
-            imgSrc: Thumbnail3,
+            imgSrc: Product13,
             name: 'MO502 - Poodle Tiny Yellow',
             gender: 'Female',
             age: '02 months',
             price: '3.900.000 VND'
         },
         {
-            imgSrc: Thumbnail4,
+            imgSrc: Product14,
             name: 'MO102 - Poodle Tiny Sepia',
             gender: 'Male',
             age: '02 months',
             price: '4.000.000 VND'
         },
         {
-            imgSrc: Thumbnail5,
+            imgSrc: Product15,
             name: 'MO512 - Alaskan Malamute Grey',
             gender: 'Male',
             age: '02 months',
