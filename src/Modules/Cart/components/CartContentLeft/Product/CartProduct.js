@@ -1,4 +1,5 @@
 import React from 'react';
+import NumberInput from '../../Input/NumberInput';
 
 const CartProduct = ({imgSrc, name, colorSrc, gender, age, price }) => {
     return (
@@ -9,7 +10,7 @@ const CartProduct = ({imgSrc, name, colorSrc, gender, age, price }) => {
             <td><img src={colorSrc} alt="" /></td>
             <td><p>{gender}</p></td>
             <td><p>{age}</p></td>
-            <td><input type="number" value="1" min="1" /></td>
+            <td><NumberInput/></td>
             <td><p>{price}</p></td>
             <td><p>Delete</p></td>
         </tr>

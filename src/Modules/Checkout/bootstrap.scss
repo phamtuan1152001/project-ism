@@ -53,7 +53,6 @@
   .container {
     display: flex;
     flex-direction: column;
-    padding: 100px 0;
     .cart-top-wrap {
       display: flex;
       justify-content: center;
@@ -66,29 +65,26 @@
       justify-content: space-between;
       align-items: center;
       margin: 50px 0 100px;
-
-    &-item {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid #EBEEEF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #FDFDFD;
-
-      i {
-        color: #808080;
+      &-item {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #EBEEEF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FDFDFD;
+        i {
+          color: #808080;
+        }
       }
-    }
+      &-payment {
+        border: 1px solid #0DB7EA;
 
-    &-payment {
-      border: 1px solid #0DB7EA;
-
-      i {
-        color: #0DB7EA;
+        i {
+          color: #0DB7EA;
+        }
       }
-    }
     }
     }
     .checkout {
@@ -114,77 +110,80 @@
           width: 600px;
           display: block;
           gap: 10px;
-          form {
-            label {
-              display: block;
+          .form {
+            .credit-card-inputs, .momo-qr-code {
               margin-bottom: 10px;
-              font-weight: bold;
-              input[type="radio"] {
+              input[type='radio'] {
                 margin-right: 10px;
               }
             }
-            .momo-qr-code {
-              margin-top: 10px;
-            }
-            .payment_info {
+            .payment_info-credit_card {
               display: none;
-              .credit_card {
-                width: 600px;
-                height: 165px;
-                .creditinfo {
+              width: 600px;
+              height: 180px;
+                .creditinfo{
                   margin-top: 10px;
                   margin-left: 30px;
-                  input[type="text"] {
+                  .cardnum{
+                    margin-top: 10px;
+                    width: 550px;
+                    padding: 10px;
                     padding-left: 20px;
                     color: #00171F;
                     border: 1px solid #EBEEEF;
                     border-radius: 10px;
                     height: 50px;
                   }
-                  #card-number::-webkit-input-placeholder {
-                    padding-left: 10px;
-                    color: #00171F;
-                  }
-                  #exp-date::-webkit-input-placeholder {
-                    padding-left: 10px;
-                    color: #00171F;
-                  }
-                  #cvv::-webkit-input-placeholder {
-                    padding-left: 10px;
-                    color: #00171F;
-                  }
-                  .cardnum {
+                  .expired{
                     margin-top: 10px;
-                    width: 550px;
+                    width: 270px;
+                    padding: 10px;
+                    padding-left: 20px;
+                    color: #00171F;
+                    border: 1px solid #EBEEEF;
+                    border-radius: 10px;
+                    height: 50px;
                   }
-                  .expired,
-                  .cvv {
+                  .cvv{
                     margin-top: 10px;
-                    width: 275px;
+                    margin-left: 10px;
+                    width: 270px;
+                    padding: 10px;
+                    padding-left: 20px;
+                    color: #00171F;
+                    border: 1px solid #EBEEEF;
+                    border-radius: 10px;
+                    height: 50px;
                   }
                 }
-              }
-              img {
-                margin-top: 30px;
-                margin-left: 30px;
-                width: 150px;
-                height: 150px;
-                border-radius: 5px;
-                border: 1px solid #00171F;
-              }
-              &.show {
-                display: block;
-                background: #EBEEEF;
-                border: 1px solid #EBEEEF;
-                border-radius: 20px;
-              }
-              .momo {
+                &.show {
+                  display: block;
+                  background: #EBEEEF;
+                  border: 1px solid #EBEEEF;
+                  border-radius: 20px;
+                }
+              }        
+              .payment_info-momo {
+                display: none;
                 width: 210px;
                 height: 210px;
-              }
-            }  
+                img {
+                  margin-top: 30px;
+                  margin-left: 30px;
+                  width: 150px;
+                  height: 150px;
+                  border-radius: 5px;
+                  border: 1px solid #00171F;
+                }
+                &.show {
+                  display: block;
+                  background: #EBEEEF;
+                  border: 1px solid #EBEEEF;
+                  border-radius: 20px;
+                }  
+              } 
+            } 
           }
-        }
         .delivery{
           .address {
             margin-top: 10px;
@@ -198,18 +197,20 @@
               margin-left: 20px;
             }
             .changeaddress {
-              input {
+              input{
                 margin-left: 20px;
                 margin-top: 10px;
                 width: 500px;
-              }
-              #address::-webkit-input-placeholder {
-                padding-left: 10px;
+                padding-left: 20px;
                 color: #00171F;
+                border: 1px solid #EBEEEF;
+                border-radius: 10px;
+                height: 50px;
               }
               button {
                 display: inline-flex;
                 margin-right: auto;
+                margin-left: 10px;
                 padding: 10px 28px 10px;
                 gap: 8px;
                 width: 40px;
@@ -225,8 +226,7 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 align-content: center;
-                flex-direction: column;
-              
+                flex-direction: column;          
                 &:hover {
                   background: #0DB7EA;
                   color: #FDFDFD;
@@ -266,8 +266,7 @@
             line-height: 24px;
             color: #FDFDFD;
             justify-content: center;
-            align-items: center;
-      
+            align-items: center;    
             &:hover {
               background: #0DB7EA;
             }

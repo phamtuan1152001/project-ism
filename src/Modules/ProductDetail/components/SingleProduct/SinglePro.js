@@ -1,5 +1,6 @@
 import React from "react";
 import ImageGallery from "@src/Modules/ProductDetail/components/SingleProduct/ImageGallery.js";
+import NumberInput from "../Input/NumberInput";
 
 const SinglePro = () => {
     return (
@@ -17,7 +18,7 @@ const SinglePro = () => {
                     <h4>34.000.000 VND</h4>
                     <div className="button-group">
                         <button type="button">Add to Cart</button>
-                        <input type="number" value="1" min="1" />
+                        <NumberInput/>
                     </div>
                     <table className="product-description">
                         <tbody>
