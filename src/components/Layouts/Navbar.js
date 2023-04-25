@@ -1,534 +1,72 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import SideDrawer from "./SideDrawer"
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import CustomLogo from "../CustomLogo";
+// import SideDrawer from "./SideDrawer";
+import "./navbar.scss";
+import "./responsive.scss";
 const Navbar = ({ router = {}, products = [] }) => {
-  const [drawer, setDrawer] = useState(false)
-  const [searchForm, setSearchForm] = useState(false)
-  const [collapsed, setCollapsed] = useState(true)
-  const [isMounted, setIsMounted] = useState(false)
-
-  const { pathname } = router
-
-  const layOutCls = ""
-  const logo = require("@src/assets/images/logo.png").default
-  if (pathname === "/digital-marketing") {
-    layOutCls = "marketing-navbar"
-    logo = require("@src/assets/images/logo2.png").default
-  }
-
-  const classOne = collapsed
-    ? "collapse navbar-collapse"
-    : "collapse navbar-collapse show"
-  const classTwo = collapsed
-    ? "navbar-toggler navbar-toggler-right collapsed"
-    : "navbar-toggler navbar-toggler-right"
-
-  const toggleNavbar = () => {
-    setCollapsed(!collapsed)
-  }
-
-  const handleDrawer = () => {
-    setDrawer(!drawer)
-  }
-
-  const handleSearchForm = () => {
-    setSearchForm(!searchForm)
-  }
-
-  useEffect(() => {
-    const elementId = document.getElementById("navbar")
-    document.addEventListener("scroll", () => {
-      if (window.scrollY > 170) {
-        elementId.classList.add("is-sticky")
-      } else {
-        elementId.classList.remove("is-sticky")
-      }
-    })
-    window.scrollTo(0, 0)
-    return () => {
-      setIsMounted(true)
-    }
-  }, [])
-
   return (
     <>
-      <header id="header">
-        <div id="navbar" className={`crake-nav ${layOutCls}`}>
-          <div className="container">
-            <nav className="navbar navbar-expand-md navbar-light">
-              <Link to="/saas">
-                <a className="navbar-brand">
-                  <img src={logo} alt="logo" />
-                </a>
-              </Link>
+      <header className="header-desktop">
+        <div className="nav-contain">
+          <div className="frame47">
+            <Link to="/" className="logo-brand">
+              <CustomLogo fill="#103559" />
+            </Link>
+            <div className="frame2">
+              <ul className="ultest">
+                <li className="frame-text">
+                  <a href="/">Home</a>
+                </li>
+                <li className="frame-text">
+                  <a href="/">Category</a>
+                </li>
+                <li className="frame-text">
+                  <a href="/">About</a>
+                </li>
+                <li className="frame-text">
+                  <a href="/">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="frame46">
+            <div className="frame3">
+              <div className="search-navbar">
+                <input
+                  type="text"
+                  name="navbar-search-input"
+                  className="nav-search-text"
+                  placeholder="Search Something Here!!!"
+                />
+              </div>
 
-              <button
-                onClick={toggleNavbar}
-                className={classTwo}
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
+              <button className="log-navbar btn" onClick="">
+                <div className="log-nav-text">Login</div>
               </button>
-
-              <div className={classOne} id="navbarSupportedContent">
-                <ul className="navbar-nav nav ms-auto">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="/#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Home
-                    </a>
-                    <ul className="dropdown_menu">
-                      <li>
-                        <Link activeClassName="active" href="/saas">
-                          <a>SaaS Landing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/app">
-                          <a>App Landing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          activeClassName="active"
-                          href="/digital-marketing"
-                        >
-                          <a>Digital Marketing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/product-landing">
-                          <a>Product Landing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/software-landing">
-                          <a>Software Landing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/book-landing">
-                          <a>Book Landing</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/agency">
-                          <a>Startup Agency</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          activeClassName="active"
-                          href="/payment-processing"
-                        >
-                          <a>Payment Processing</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <a
-                      href="/#"
-                      className="nav-link"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Pages
-                    </a>
-                    <ul className="dropdown_menu">
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          About
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link activeClassName="active" href="/about-one">
-                              <a>About Us 1</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/about-two">
-                              <a>About Us 2</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <Link activeClassName="active" href="/features">
-                          <a>Features</a>
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link activeClassName="active" href="/services">
-                          <a>Services</a>
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link activeClassName="active" href="/gallery">
-                          <a>Gallery</a>
-                        </Link>
-                      </li>
-
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Team
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link activeClassName="active" href="/team-one">
-                              <a>Team 1</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/team-two">
-                              <a>Team 2</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Pricing
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link activeClassName="active" href="/pricing-one">
-                              <a>Pricing 1</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/pricing-two">
-                              <a>Pricing 2</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/pricing-three"
-                            >
-                              <a>Pricing 3</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Portfolio
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/portfolio-one"
-                            >
-                              <a>Portfolio 2 Columns</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/portfolio-two"
-                            >
-                              <a>Portfolio 3 Columns</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/portfolio-three"
-                            >
-                              <a>Portfolio 4 Columns Wide</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/project-details"
-                            >
-                              <a>Portfolio Details</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Shop
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link activeClassName="active" href="/shop-one">
-                              <a>Shop 1</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/shop-two">
-                              <a>Shop 2</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/shop-details">
-                              <a>Shop Details</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/cart">
-                              <a>Cart</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link activeClassName="active" href="/checkout">
-                              <a>Checkout</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="/#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Blog
-                        </a>
-                        <ul className="dropdown_menu">
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/blog/blog-one"
-                            >
-                              <a>Blog 1</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/blog/blog-two"
-                            >
-                              <a>Blog 2</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              activeClassName="active"
-                              href="/blog/blog-details"
-                            >
-                              <a>Blog Details</a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <Link activeClassName="active" href="/login">
-                          <a>Login</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/signup">
-                          <a>Sign Up</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/coming-soon">
-                          <a>Coming Soon</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/error">
-                          <a>404 Error</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/faq">
-                          <a>FAQ</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="/#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Portfolio
-                    </a>
-                    <ul className="dropdown_menu">
-                      <li>
-                        <Link activeClassName="active" href="/portfolio-one">
-                          <a>Portfolio 2 Columns</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/portfolio-two">
-                          <a>Portfolio 3 Columns</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/portfolio-three">
-                          <a>Portfolio 4 Columns Wide</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/project-details">
-                          <a>Portfolio Details</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="/#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Blog
-                    </a>
-                    <ul className="dropdown_menu">
-                      <li>
-                        <Link activeClassName="active" href="/blog-one">
-                          <a>Blog 1</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/blog-two">
-                          <a>Blog 2</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/blog-details">
-                          <a>Blog Details</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="/#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Shop
-                    </a>
-                    <ul className="dropdown_menu">
-                      <li>
-                        <Link activeClassName="active" href="/shop-one">
-                          <a>Shop 1</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/shop-two">
-                          <a>Shop 2</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/shop-details">
-                          <a>Shop Details</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/cart">
-                          <a>Cart</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link activeClassName="active" href="/checkout">
-                          <a>Checkout</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link activeClassName="active" href="/contact">
-                      <a className="nav-link">Contact</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="ms-auto others-option">
-                <ul className="navbar-nav">
-                  <li className="nav-item cart-wrapper">
-                    <Link activeClassName="active" href="/cart">
-                      <a>
-                        <i className="icofont-shopping-cart cart-icon"></i>
-
-                        <span>{products.length}</span>
-                      </a>
-                    </Link>
-                  </li>
-
-                  <li className="header-search-box">
-                    <Link activeClassName="active" href="/#">
-                      <a
-                        onClick={(e) => {
-                          e.preventDefault()
-                          handleSearchForm()
-                        }}
-                        title="Search"
-                      >
-                        <i className="icofont-search-2"></i>
-                      </a>
-                    </Link>
-                  </li>
-
-                  <li onClick={handleDrawer}>
-                    <div className="side-menu">
-                      <span className="bar-1"></span>
-                      <span className="bar-2"></span>
-                      <span className="bar-3"></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+              <button className="cart-navbar btn" onClick="">
+                <svg
+                  width="40"
+                  height="45"
+                  viewBox="0 0 32 38"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 10H7.26835C7.74213 10 7.97922 10 8.17246 10.0855C8.34283 10.1608 8.48871 10.2823 8.59375 10.4362C8.71289 10.6107 8.75578 10.8437 8.8418 11.3096L11 23L21.4195 23C21.8739 23 22.1016 23 22.2896 22.9198C22.4554 22.8491 22.5989 22.7348 22.7051 22.5891C22.8255 22.424 22.8763 22.2025 22.9785 21.7597L24.5477 14.9597C24.7022 14.2902 24.7796 13.9556 24.6946 13.6926C24.6201 13.4621 24.4639 13.2663 24.256 13.1419C24.0189 13 23.6758 13 22.9887 13H9.5M22 28C21.4477 28 21 27.5523 21 27C21 26.4477 21.4477 26 22 26C22.5523 26 23 26.4477 23 27C23 27.5523 22.5523 28 22 28ZM12 28C11.4477 28 11 27.5523 11 27C11 26.4477 11.4477 26 12 26C12.5523 26 13 26.4477 13 27C13 27.5523 12.5523 28 12 28Z"
+                    stroke="#000"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </header>
-
-      {drawer ? <SideDrawer onClick={handleDrawer} /> : ""}
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

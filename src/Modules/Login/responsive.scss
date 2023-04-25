@@ -12,7 +12,7 @@ $value_six: 1200px;
 $value_seven: 1350px;
 $value_eight: 1910px;
 
-.homepage-container {
+.home__page {
 
   /* Max width (767px) */
   @media only #{$media} and ($feature_max : $value_one) {}

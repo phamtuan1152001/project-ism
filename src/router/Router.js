@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 // ** Custom Components
 // import Spinner from '@components/spinner/Loading-spinner' // Uncomment if your require content fallback
 import LayoutWrapper from "@layouts/layout-wrapper";
+import LoginLayout from "@layouts/LoginLayout";
 
 // ** Router Components
 import {
@@ -40,6 +41,7 @@ const Router = ({ Routes }) => {
 
   // ** All of the available layouts
   const Layouts = {
+    LoginLayout,
     BlankLayout,
   };
 

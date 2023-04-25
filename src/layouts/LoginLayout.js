@@ -9,7 +9,7 @@ import { getCodeLanguage, getShareInfoSelector } from "@store/common/selectors";
 import { useRouteMatch } from "react-router";
 import Footer from "../components/Layouts/Footer";
 
-const BlankLayout = ({ children, ...rest }) => {
+const LoginLayout = ({ children, ...rest }) => {
   const dispatch = useDispatch();
   const { url } = useRouteMatch();
 
@@ -24,13 +24,7 @@ const BlankLayout = ({ children, ...rest }) => {
       <div className={""}>
         <div className="app-content content">
           <div className="content-wrapper">
-            <div className="content-header">
-              <Navbar />
-            </div>
             <div className="content-body">{children}</div>
-            <div className="content-footer">
-              <Footer />
-            </div>
           </div>
         </div>
         <GoTop scrollStepInPx="50" delayInMs="16.66" />
@@ -50,4 +44,4 @@ const BlankLayout = ({ children, ...rest }) => {
   );
 };
 
-export default BlankLayout;
+export default LoginLayout;
