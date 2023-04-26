@@ -19,13 +19,13 @@ import imageText from "../assets/images/image-2-9@2x.png";
 const Home = () => {
   return (
     <form className="homepage screen" name="form1" action="form1" method="post">
-      <a href="javascript:SubmitForm('form1')">
+      {/* <a href="javascript:SubmitForm('form1')">
         <img
           className="herro-banner bp1-animate-enter "
           src={banner}
           alt="herro-banner"
         />
-      </a>
+      </a> */}
       {/* <div className="frame52">
         <div className="flex-row">
           <div className="frame">
