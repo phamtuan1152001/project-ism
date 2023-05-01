@@ -1,8 +1,22 @@
-import * as Actions from '../constants';
+import * as Actions from "../constants";
 
-export const getDataHomeAction = (payload) => {
+export const createCart = (payload) => {
   return {
-    type: Actions.GET_DATA_HOME_REQUEST,
+    type: Actions.CREATE_CART,
     payload,
   };
 };
+
+export function getListCart(payload) {
+  return {
+    type: Actions.GET_DATA_CART,
+    payload,
+  };
+}
+
+export function setListCart(payload) {
+  return {
+    type: Actions.SET_DATA_CART,
+    payload,
+  };
+}

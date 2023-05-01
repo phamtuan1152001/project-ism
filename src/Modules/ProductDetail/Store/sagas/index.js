@@ -1,23 +1,68 @@
-import * as Actions from '../constants';
-import { getHomeData } from '../service';
-import { put, call, takeEvery, select } from 'redux-saga/effects';
-import { getCodeLanguage } from '@store/common/selectors';
+import * as Actions from "../constants";
+import { put, call, takeEvery, select, takeLatest } from "redux-saga/effects";
 
-function* getDataHome() {
+// @service
+import { createCart, getListCart } from "../service";
+
+// @antd
+import notification from "antd/es/notification";
+
+// @constants
+import { RETCODE_SUCCESS, SUCCESS } from "@configs/contants";
+
+function* fetchDataCart({ payload }) {
   try {
-    const codeLanguage = yield select(getCodeLanguage);
-    const res = yield call(getHomeData, codeLanguage);
+    yield put({ type: Actions.SET_LOADING_CART, payload: true });
+    const res = yield call(getListCart, payload);
     const { data } = res;
-    if (res.retCode === 0) {
-      yield put({ type: Actions.GET_DATA_HOME_SUCCESS, payload: data });
-    } else {
-      yield put({ type: Actions.GET_DATA_HOME_FAILED, error: res.retText });
+    if (res.status === SUCCESS && data.retCode === RETCODE_SUCCESS) {
+      yield put({ type: Actions.SET_DATA_CART, payload: data.retData });
     }
-  } catch (e) {
-    yield put({ type: Actions.GET_DATA_HOME_FAILED, error: e });
+  } catch (err) {
+    console.log("ERROR!", err);
+    yield put({ type: Actions.SET_ERROR_CART, payload: err });
+  } finally {
+    yield put({ type: Actions.SET_LOADING_CART, payload: false });
   }
 }
 
-export default function* homeSaga() {
-  yield takeEvery(Actions.GET_DATA_HOME_REQUEST, getDataHome);
+function* fetchCreateCart({ payload }) {
+  try {
+    yield put({ type: Actions.SET_LOADING_CART, payload: true });
+    const res = yield call(createCart, payload);
+    const { data } = res;
+    if (res.status === SUCCESS && data.retCode === RETCODE_SUCCESS) {
+      yield put({
+        type: Actions.GET_DATA_CART,
+        payload: {
+          userId: data?.retData?.userId,
+        },
+      });
+      notification.success({
+        message: "Successfully",
+        description: "Create successfully",
+        duration: 3,
+      });
+    } else {
+      yield put({
+        type: Actions.SET_ERROR_CART,
+        payload: "Create unsuccessfully",
+      });
+      notification.error({
+        message: "Fail",
+        description: "Create unsuccessfully",
+        duration: 3,
+      });
+    }
+  } catch (err) {
+    console.log("ERROR", err);
+    yield put({ type: Actions.SET_ERROR_CART, payload: err });
+  } finally {
+    yield put({ type: Actions.SET_LOADING_CART, payload: false });
+  }
+}
+
+export default function* cartSaga() {
+  yield takeEvery(Actions.CREATE_CART, fetchCreateCart);
+  yield takeLatest(Actions.GET_DATA_CART, fetchDataCart);
 }

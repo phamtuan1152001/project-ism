@@ -1,3 +1,3 @@
-import homeSaga from './sagas';
+import cartSaga from "./sagas";
 
-export default [homeSaga()];
+export default [cartSaga()];

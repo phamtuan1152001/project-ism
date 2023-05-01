@@ -1,5 +1,5 @@
-import Home from './reducers';
+import cartReducer from "./reducers";
 
 export default {
-  Home: Home,
+  Cart: cartReducer,
 };

@@ -1,14 +1,12 @@
-import { createSelector } from 'reselect';
-export const reducer = (state) => state.Home;
+import { createSelector } from "reselect";
+export const reducer = (state) => state.Cart;
 
-export const getDataHome = createSelector(
+export const getDataCart = createSelector(
   reducer,
-  (data) => data?.homeData || {}
+  (data) => data?.dataCart || {}
 );
 
-export const getLoadingDataHomeSelector = createSelector(
-  reducer,
-  (data) => data?.loading || false
-);
+export const getLoadingCart = createSelector(reducer, (data) => data?.loading);
 
-export const getHomeError = createSelector(reducer, (data) => data?.error);
+export const getErrorCart = createSelector(reducer, (data) => data?.error);
+export const getSuccessCart = createSelector(reducer, (data) => data?.success);

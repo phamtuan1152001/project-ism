@@ -1,29 +1,38 @@
-import * as Actions from '../constants';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
+import * as Actions from "../constants";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
 const initState = {
   homeData: {},
   loading: false,
-  error: '',
+  error: "",
 };
 
-const HomeReducers = (state = initState, action = {}) => {
+const CartReducers = (state = initState, action = {}) => {
   switch (action.type) {
-    case Actions.GET_DATA_HOME_REQUEST:
-      return { ...state, loading: true };
-    case Actions.GET_DATA_HOME_SUCCESS:
+    case Actions.SET_DATA_CART:
+      return { ...state, dataCart: action.payload };
+
+    case Actions.SET_DATA_CART:
       return {
         ...state,
-        homeData: action.payload,
-        loading: false,
+        loading: action.payload || false,
       };
-    case Actions.GET_DATA_HOME_FAILED:
+
+    case Actions.SET_ERROR_CART:
       return {
         ...state,
-        error: action.error,
-        loading: false,
+        error: action.payload || null,
       };
+    case Actions.SET_SUCCESS_CART:
+      return {
+        ...state,
+        error: null,
+        success: action.payload,
+      };
+
+    case Actions.RESET_CART:
+      return initState;
     default: {
       return state;
     }
@@ -31,9 +40,9 @@ const HomeReducers = (state = initState, action = {}) => {
 };
 
 const persistConfig = {
-  key: 'Home',
+  key: "Cart",
   storage,
-  blacklist: ['loading', 'error'],
+  blacklist: ["loading", "error", "success"],
 };
 
-export default persistReducer(persistConfig, HomeReducers);
+export default persistReducer(persistConfig, CartReducers);

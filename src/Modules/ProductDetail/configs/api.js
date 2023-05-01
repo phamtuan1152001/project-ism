@@ -1,4 +1,5 @@
 export default {
-  GET_BANNER: "WebsiteSTNHD/TrangChu",
   GET_DETAIL_PRODUCT: "/products/detail",
+  CREATE_CART: "/cart/create-cart",
+  GET_LIST_CART: "/cart/get-cart",
 };

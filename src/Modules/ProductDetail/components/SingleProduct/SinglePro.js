@@ -8,7 +8,16 @@ import NumberInput from "../Input/NumberInput";
 // @utility
 import { formatToCurrencyVND } from "@utility/common";
 
+// @actions
+import { createCart, getListCart } from "../../Store/actions";
+import { useDispatch, useSelector } from "react-redux";
+
+// @selector
+import { getUserData } from "@store/user/selector";
+
 const SinglePro = ({ detailProduct }) => {
+  const dispatch = useDispatch();
+
   const {
     age,
     description,
@@ -20,6 +29,22 @@ const SinglePro = ({ detailProduct }) => {
     price,
     weight,
   } = detailProduct || {};
+  const userInfo = useSelector(getUserData);
+  // console.log("userInfo", userInfo);
+
+  const handleAddCart = () => {
+    dispatch(
+      createCart({
+        userId: userInfo?.id,
+        cartProduct: {
+          ...detailProduct,
+          totalItem: 1,
+          totalPrice: price,
+        },
+      })
+    );
+  };
+
   return (
     <div className="single-product">
       <ImageGallery imageList={image} />
@@ -34,7 +59,9 @@ const SinglePro = ({ detailProduct }) => {
         <h1>{name}</h1>
         <h4>{formatToCurrencyVND(price)}</h4>
         <div className="button-group">
-          <button type="button">Add to Cart</button>
+          <button type="button" onClick={() => handleAddCart()}>
+            Add to Cart
+          </button>
           <NumberInput />
         </div>
         <table className="product-description">
