@@ -1,9 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
+import "./index.css";
+import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+
+// @svg and img
 import pet from "../assets/svg/PetAdoption.svg";
 import welcome from "../assets/svg/Welcome.svg";
-import "./index.css";
-import { Link } from "react-router-dom";
+
+// @antd
+import { Button, notification } from "antd";
+
+// @service
+import { signIn } from "../Store/service";
+
+// @helpers
+import { setAccessToken } from "../helpers";
+import apiMethod from "@utility/ApiMethod";
+
+// @constants
+import { RETCODE_SUCCESS } from "@configs/contants";
+
+// @actions
+import { actions as ActionsUser } from "@store/user/reducer";
+
 const Login = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const fetchSignIn = async () => {
+    try {
+      setLoading(true);
+      const { data } = await signIn({
+        username,
+        password,
+      });
+      if (data?.retCode === RETCODE_SUCCESS) {
+        const accessToken = data?.retData?.accessToken;
+        await setAccessToken(accessToken);
+        apiMethod.defaults.headers.common["Authorization"] = accessToken;
+        await dispatch(ActionsUser.setInfoData(data?.retData));
+        notification.success({
+          message: "Successfully",
+          description: data?.retText,
+          duration: 2,
+        });
+        setTimeout(() => {
+          // window.location.reload();
+          history.push("/");
+        }, 2000);
+      } else {
+        notification.error({
+          message: "Fail",
+          description: "Login unsuccessfully!",
+          duration: 2,
+        });
+      }
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="contain-wrapper">
@@ -13,13 +75,27 @@ const Login = () => {
               <h2 className="title">Log in</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input type="text" placeholder="Username" />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
-              <input type="submit" value="Login" className="btn solid" />
+              <Button
+                loading={loading}
+                className="btn solid"
+                onClick={() => fetchSignIn()}
+              >
+                Login
+              </Button>
               <p className="social-text">Or Sign in with social platforms</p>
               <div className="social-media">
                 <Link href="#" className="social-icon">
