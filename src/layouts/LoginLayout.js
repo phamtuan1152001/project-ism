@@ -27,9 +27,9 @@ const LoginLayout = ({ children, ...rest }) => {
             <div className="content-body">{children}</div>
           </div>
         </div>
-        <GoTop scrollStepInPx="50" delayInMs="16.66" />
+        {/* <GoTop scrollStepInPx="50" delayInMs="16.66" /> */}
       </div>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-left"
         autoClose={5000}
         hideProgressBar={false}
@@ -39,7 +39,7 @@ const LoginLayout = ({ children, ...rest }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
     </Fragment>
   );
 };

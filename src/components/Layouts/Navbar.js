@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import CustomLogo from "../CustomLogo";
 // import SideDrawer from "./SideDrawer";
 import "./navbar.scss";
 import "./responsive.scss";
 const Navbar = ({ router = {}, products = [] }) => {
+  const history = useHistory();
+
   return (
     <>
       <header className="header-desktop">
@@ -42,7 +44,12 @@ const Navbar = ({ router = {}, products = [] }) => {
               </div>
 
               <button className="log-navbar btn" onClick="">
-                <div className="log-nav-text">Login</div>
+                <div
+                  className="log-nav-text"
+                  onClick={() => history.push("/login")}
+                >
+                  Login
+                </div>
               </button>
               <button className="cart-navbar btn" onClick="">
                 <svg

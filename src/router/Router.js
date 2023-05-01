@@ -140,7 +140,7 @@ const Router = ({ Routes }) => {
                   />
                 );
               })}
-              <Route
+              {/* <Route
                 path="/NamPhutThuocBai"
                 component={() => {
                   window.location.href = "https://5ptb.stnhd.com";
@@ -150,8 +150,8 @@ const Router = ({ Routes }) => {
 
               <Route path="/student">
                 <Redirect to="/download" />
-              </Route>
-              <Route path="*" component={Error} />
+              </Route> */}
+              {/* <Route path="*" component={Error} /> */}
             </Switch>
           </LayoutTag>
         </Route>
@@ -162,7 +162,12 @@ const Router = ({ Routes }) => {
 
   return (
     <AppRouter basename={process.env.REACT_APP_BASENAME}>
-      {ResolveRoutes()}
+      {/* {ResolveRoutes()} */}
+      <Switch>
+        {ResolveRoutes()}
+        {/* NotFound Error page */}
+        <Route path="*" component={Error} />
+      </Switch>
     </AppRouter>
   );
 };
