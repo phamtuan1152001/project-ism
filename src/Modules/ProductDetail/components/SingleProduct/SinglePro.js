@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // @selector
 import { getUserData } from "@store/user/selector";
+import { getDataCart } from "../../Store/selectors";
 
 const SinglePro = ({ detailProduct }) => {
   const dispatch = useDispatch();
@@ -30,7 +31,8 @@ const SinglePro = ({ detailProduct }) => {
     weight,
   } = detailProduct || {};
   const userInfo = useSelector(getUserData);
-  // console.log("userInfo", userInfo);
+  const cart = useSelector(getDataCart);
+  console.log("userInfo", cart);
 
   const handleAddCart = () => {
     dispatch(
