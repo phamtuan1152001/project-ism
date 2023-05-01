@@ -35,7 +35,7 @@ const ProductDetails = () => {
     }
   };
 
-  console.log("detailProduct", detailProduct);
+  // console.log("detailProduct", detailProduct);
 
   return (
     <div className="productdetail">
