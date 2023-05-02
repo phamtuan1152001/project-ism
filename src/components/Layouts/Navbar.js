@@ -66,7 +66,11 @@ const Navbar = ({ router = {}, products = [] }) => {
               </button>
               <button className="cart-navbar btn" onClick="">
                 <CartSvg />
-                <span className="tag-cart">{listCart?.length}</span>
+                {!!listCart
+                  ? listCart?.length > 0 && (
+                      <span className="tag-cart">{listCart?.length}</span>
+                    )
+                  : undefined}
               </button>
             </div>
           </div>
