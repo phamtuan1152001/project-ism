@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment/moment";
+import { useDispatch, useSelector } from "react-redux";
 
 // @components
 import ImageGallery from "@src/Modules/ProductDetail/components/SingleProduct/ImageGallery.js";
@@ -10,7 +11,6 @@ import { formatToCurrencyVND } from "@utility/common";
 
 // @actions
 import { createCart, getListCart } from "../../Store/actions";
-import { useDispatch, useSelector } from "react-redux";
 
 // @selector
 import { getUserData } from "@store/user/selector";
@@ -32,7 +32,7 @@ const SinglePro = ({ detailProduct }) => {
   } = detailProduct || {};
   const userInfo = useSelector(getUserData);
   const cart = useSelector(getDataCart);
-  console.log("userInfo", cart);
+  // console.log("userInfo", cart);
 
   const handleAddCart = () => {
     dispatch(
