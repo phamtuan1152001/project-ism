@@ -5,7 +5,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+// @components
 import CustomLogo from "../CustomLogo";
+import CartInfo from "./CartInfo";
 // import SideDrawer from "./SideDrawer";
 
 // @svg
@@ -15,11 +17,14 @@ import { CartSvg } from "./svg";
 import { getUserData } from "@store/user/selector";
 import { getDataCart } from "../../Modules/ProductDetail/Store/selectors";
 
+// @antd
+import { Popover } from "antd";
+
 const Navbar = ({ router = {}, products = [] }) => {
   const history = useHistory();
   const cartInfo = useSelector(getDataCart);
   const { listCart } = cartInfo || {};
-  console.log("cartInfo", cartInfo);
+  // console.log("cartInfo", cartInfo);
   return (
     <>
       <header className="header-desktop">
@@ -64,14 +69,20 @@ const Navbar = ({ router = {}, products = [] }) => {
                   Login
                 </div>
               </button>
-              <button className="cart-navbar btn" onClick="">
-                <CartSvg />
-                {!!listCart
-                  ? listCart?.length > 0 && (
-                      <span className="tag-cart">{listCart?.length}</span>
-                    )
-                  : undefined}
-              </button>
+              <Popover
+                content={<CartInfo />}
+                title="Cart Information"
+                trigger={"click"}
+              >
+                <button className="cart-navbar btn" onClick="">
+                  <CartSvg />
+                  {!!listCart
+                    ? listCart?.length > 0 && (
+                        <span className="tag-cart">{listCart?.length}</span>
+                      )
+                    : undefined}
+                </button>
+              </Popover>
             </div>
           </div>
         </div>
