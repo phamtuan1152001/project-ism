@@ -14,10 +14,15 @@ import { createCart, getListCart } from "../../Store/actions";
 
 // @selector
 import { getUserData } from "@store/user/selector";
-import { getDataCart } from "../../Store/selectors";
+import { getDataCart, getLoadingCart } from "../../Store/selectors";
+// import { getLoadingCart } from "../../Store/selectors";
+
+// @antd
+import { Button } from "antd";
 
 const SinglePro = ({ detailProduct }) => {
   const dispatch = useDispatch();
+  const loadingCart = useSelector(getLoadingCart);
 
   const {
     age,
@@ -32,7 +37,7 @@ const SinglePro = ({ detailProduct }) => {
   } = detailProduct || {};
   const userInfo = useSelector(getUserData);
   const cart = useSelector(getDataCart);
-  // console.log("userInfo", cart);
+  // console.log("userInfo", loadingCart);
 
   const handleAddCart = () => {
     dispatch(
@@ -61,9 +66,14 @@ const SinglePro = ({ detailProduct }) => {
         <h1>{name}</h1>
         <h4>{formatToCurrencyVND(price)}</h4>
         <div className="button-group">
-          <button type="button" onClick={() => handleAddCart()}>
+          <Button
+            type="button"
+            onClick={() => handleAddCart()}
+            style={{ height: "100%" }}
+            loading={loadingCart}
+          >
             Add to Cart
-          </button>
+          </Button>
           <NumberInput />
         </div>
         <table className="product-description">

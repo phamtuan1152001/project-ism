@@ -1,47 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // @utility
 import { formatToCurrencyVND } from "@utility/common";
 
 // @antd
-import { Button } from "antd";
+import { Button, Spin } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
+
+// @actions
+import { deleteItemCart } from "../../Modules/ProductDetail/Store/actions";
+
+// @selector
+import { getUserData } from "@store/user/selector";
+import { getLoadingCart } from "../../Modules/ProductDetail/Store/selectors";
 
 const CartInfo = ({ cartInfo }) => {
+  const dispatch = useDispatch();
+
+  const userInfo = useSelector(getUserData);
+  const loadingCart = useSelector(getLoadingCart);
+
   const { listCart } = cartInfo || {};
 
-  console.log("cartInfo", cartInfo);
+  const [isHover, setIsHover] = useState(false);
+  const [itemHover, setItemHover] = useState({});
+
+  // console.log("cartInfo", loadingCart);
+
+  const handleDeleteItemCart = (itemCart) => {
+    dispatch(
+      deleteItemCart({
+        userId: userInfo?.id,
+        cartProduct: {
+          ...itemCart,
+          totalItem: 1,
+          totalPrice: itemCart?.price,
+        },
+      })
+    );
+  };
 
   return (
     <React.Fragment>
       <div className="cart-content">
-        {listCart.map((item) => {
-          return (
-            <div className="cart-content__item">
-              <div className="row">
-                <div className="col-6">
-                  <div className="cart-content__item-image">
-                    <img
-                      src={item.image[0].url}
-                      className="image-cart"
-                      alt="image-cart"
-                    />
+        <Spin spinning={loadingCart}>
+          {listCart.map((item) => {
+            return (
+              <div
+                className="cart-content__item"
+                onMouseOver={() => {
+                  setIsHover(true);
+                  setItemHover(item);
+                }}
+                onMouseLeave={() => {
+                  setIsHover(false);
+                  setItemHover({});
+                }}
+              >
+                <div className="row">
+                  <div className="col-6">
+                    <div className="cart-content__item-image">
+                      <img
+                        src={item.image[0].url}
+                        className="image-cart"
+                        alt="image-cart"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <h3 className="cart-content__item-title">
+                      {item.name} <span>x{item.totalItem}</span>
+                    </h3>
+                    <p className="cart-content__item-description">
+                      {item.description}
+                    </p>
+                    <p className="cart-content__item-price">
+                      {formatToCurrencyVND(item.price)}
+                    </p>
                   </div>
                 </div>
-                <div className="col-6">
-                  <h3 className="cart-content__item-title">
-                    {item.name} <span>x{item.totalItem}</span>
-                  </h3>
-                  <p className="cart-content__item-description">
-                    {item.description}
-                  </p>
-                  <p className="cart-content__item-price">
-                    {formatToCurrencyVND(item.price)}
-                  </p>
-                </div>
+                {isHover && itemHover._id === item._id ? (
+                  <div
+                    className="btn-delete"
+                    onClick={() => handleDeleteItemCart(item)}
+                  >
+                    <DeleteOutlined />
+                  </div>
+                ) : undefined}
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </Spin>
       </div>
       <div className="cart-total">
         <div className="cart-total__item">

@@ -20,3 +20,10 @@ export function setListCart(payload) {
     payload,
   };
 }
+
+export function deleteItemCart(payload) {
+  return {
+    type: Actions.DELETE_CART,
+    payload,
+  };
+}

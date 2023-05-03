@@ -13,7 +13,7 @@ const CartReducers = (state = initState, action = {}) => {
     case Actions.SET_DATA_CART:
       return { ...state, dataCart: action.payload };
 
-    case Actions.SET_DATA_CART:
+    case Actions.SET_LOADING_CART:
       return {
         ...state,
         loading: action.payload || false,

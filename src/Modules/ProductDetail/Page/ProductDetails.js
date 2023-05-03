@@ -23,7 +23,7 @@ const ProductDetails = () => {
     try {
       setLoading(true);
       const { data } = await getDetailProduct({
-        id: "644242148df8ce1428803bc9",
+        id: "643905b0e2f9d51f3740b64e",
       });
       if (data.retCode === 0) {
         setDetailProduct(data?.retData);

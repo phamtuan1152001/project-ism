@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "antd": "^4.22.6",
     "aws-sdk": "^2.1186.0",
     "axios": "0.21.1",

@@ -12,7 +12,11 @@ export const createCart = (payload) => {
 };
 
 export const getListCart = (payload) => {
-  console.log("payload", payload);
+  // console.log("payload", payload);
   const { userId } = payload || {};
   return apiMethod.post(API.GET_LIST_CART, { userId });
+};
+
+export const deleteItemCart = (payload) => {
+  return apiMethod.post(API.DELETE_ITEM_CART, payload);
 };
