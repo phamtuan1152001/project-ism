@@ -70,7 +70,8 @@ const Navbar = ({ router = {}, products = [] }) => {
                 </div>
               </button>
               <Popover
-                content={<CartInfo />}
+                className="cart-wrapper"
+                content={<CartInfo cartInfo={cartInfo} />}
                 title="Cart Information"
                 trigger={"click"}
               >
