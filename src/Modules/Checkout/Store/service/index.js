@@ -13,3 +13,8 @@ export const getHomeData = async (codeLanguage = "vi-VN") => {
 export const createOrder = (payload) => {
   return apiMethod.post(API.CREATE_ORDER, payload);
 };
+
+export const getDetailOrder = (payload) => {
+  const { orderId } = payload || {};
+  return apiMethod.get(API.GET_DETAIL_ORDER + `/${orderId}`);
+};
