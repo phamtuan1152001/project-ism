@@ -1,3 +1,3 @@
 export default {
-  GET_BANNER: 'WebsiteSTNHD/TrangChu',
+  CREATE_ORDER: "/order/create-order",
 };

@@ -15,8 +15,21 @@ export default {
         authRoute: true,
       },
       props: {
-        title: "Trang chủ | Hita Camp",
+        title: "Checkout",
         titleI18n: "Checkout",
+        headerStyle: "fill",
+        exact: true,
+      },
+    },
+    {
+      url: "payment",
+      component: "Page/Payment",
+      meta: {
+        authRoute: true,
+      },
+      props: {
+        title: "Payment",
+        titleI18n: "Payment",
         headerStyle: "fill",
         exact: true,
       },
@@ -24,6 +37,6 @@ export default {
   ],
   lang: { vi: intlMessagesVi, en: intlMessagesEN },
   isAuthenticate: "Any",
-  redux: initReducer,
-  sagas: initSagas,
+  // redux: initReducer,
+  // sagas: initSagas,
 };

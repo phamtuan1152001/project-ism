@@ -6,7 +6,12 @@ import { formatToCurrencyVND } from "@utility/common";
 // @antd
 import { Button } from "antd";
 
-const Placeorder = ({ cartInfo, isDisable, fetchCreateOrder = () => {} }) => {
+const Placeorder = ({
+  cartInfo,
+  isDisable,
+  fetchCreateOrder = () => {},
+  loading,
+}) => {
   const { listCart } = cartInfo || {};
 
   return (
@@ -89,6 +94,7 @@ const Placeorder = ({ cartInfo, isDisable, fetchCreateOrder = () => {} }) => {
         <Button
           type="submit"
           disabled={isDisable}
+          loading={loading}
           onClick={() => fetchCreateOrder()}
         >
           Place Order
