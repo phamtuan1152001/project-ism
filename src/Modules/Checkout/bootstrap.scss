@@ -2,14 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'SVN-Gilroy', sans-serif;
+  font-family: "SVN-Gilroy", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
 }
 
 .PayMoney {
-  background: #FDFDFD;
+  background: #fdfdfd;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,13 +17,13 @@
   justify-content: center;
   align-items: center;
   h3 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
-  display: flex;
-  align-items: flex-end;
-  color: #003459;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: flex-end;
+    color: #003459;
   }
   h4 {
     font-style: normal;
@@ -32,7 +32,7 @@
     line-height: 24px;
     display: flex;
     align-items: flex-end;
-    color: #00171F;
+    color: #00171f;
   }
   h5 {
     font-style: normal;
@@ -57,35 +57,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    .cart-top {
-      height: 2px;
-      width: 70%;
-      background: #EBEEEF;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 50px 0 100px;
-      &-item {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid #EBEEEF;
+      .cart-top {
+        height: 2px;
+        width: 70%;
+        background: #ebeeef;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        background: #FDFDFD;
-        i {
-          color: #808080;
+        margin: 50px 0 100px;
+        &-item {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid #ebeeef;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fdfdfd;
+          i {
+            color: #808080;
+          }
         }
-      }
-      &-payment {
-        border: 1px solid #0DB7EA;
+        &-payment {
+          border: 1px solid #0db7ea;
 
-        i {
-          color: #0DB7EA;
+          i {
+            color: #0db7ea;
+          }
         }
       }
-    }
     }
     .checkout {
       box-sizing: border-box;
@@ -95,73 +95,107 @@
       padding: 22px 20px;
       gap: 34px;
       width: 1180px;
-      height: 800px;
-      background: #FDFDFD;
-      border: 1px solid #EBEEEF;
+      height: 100%;
+      background: #fdfdfd;
+      border: 1px solid #ebeeef;
       border-radius: 20px;
+      margin-bottom: 30px;
+
       .payship {
         display: flex;
         flex-direction: column;
         padding-right: 12px;
         gap: 17px;
         width: 600px;
+        height: 100%;
         align-items: flex-start;
-        .paymentmethod {
-          width: 600px;
-          display: block;
-          gap: 10px;
+        .paymentinfo {
+          background: #ebeeef;
+          border: 1px solid #ebeeef;
+          border-radius: 20px;
+          width: 100%;
+          padding: 20px;
           .form {
-            .credit-card-inputs, .momo-qr-code {
-              margin-bottom: 10px;
-              input[type='radio'] {
-                margin-right: 10px;
+            .ant-form {
+              .ant-form-item {
+                .ant-form-item-label {
+                  label {
+                    font-size: 18px;
+                    font-family: "Times New Roman", Times, serif;
+                  }
+                }
+                .ant-form-item-control {
+                  .ant-form-item-control-input-content {
+                    input {
+                      height: 48px;
+                      border-radius: 10px;
+                      font-size: 16px;
+                      font-family: "Times New Roman", Times, serif;
+                    }
+                  }
+                }
               }
             }
-            .payment_info-credit_card {
-              display: none;
-              width: 600px;
-              height: 180px;
-                .creditinfo{
+          }
+          .paymentmethod {
+            width: 600px;
+            display: block;
+            gap: 10px;
+            .form {
+              .credit-card-inputs,
+              .momo-qr-code {
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-family: "Times New Roman", Times, serif;
+                input[type="radio"] {
+                  margin-right: 10px;
+                }
+              }
+              .payment_info-credit_card {
+                display: none;
+                width: 600px;
+                height: 180px;
+                .creditinfo {
                   margin-top: 10px;
                   margin-left: 30px;
-                  .cardnum{
+                  .cardnum {
                     width: 550px;
                     padding: 10px;
                     padding-left: 20px;
-                    color: #00171F;
-                    border: 1px solid #EBEEEF;
+                    color: #00171f;
+                    border: 1px solid #ebeeef;
                     border-radius: 10px;
                     height: 50px;
                   }
-                  .expired{
+                  .expired {
                     margin-top: 10px;
                     width: 270px;
                     padding: 10px;
                     padding-left: 20px;
-                    color: #00171F;
-                    border: 1px solid #EBEEEF;
+                    color: #00171f;
+                    border: 1px solid #ebeeef;
                     border-radius: 10px;
                     height: 50px;
                   }
-                  .cvv{
+                  .cvv {
                     margin-top: 10px;
                     margin-left: 10px;
                     width: 270px;
                     padding: 10px;
                     padding-left: 20px;
-                    color: #00171F;
-                    border: 1px solid #EBEEEF;
+                    color: #00171f;
+                    border: 1px solid #ebeeef;
                     border-radius: 10px;
                     height: 50px;
                   }
                 }
                 &.show {
                   display: block;
-                  background: #EBEEEF;
-                  border: 1px solid #EBEEEF;
+                  background: #ebeeef;
+                  border: 1px solid #ebeeef;
                   border-radius: 20px;
                 }
-              }        
+              }
               .payment_info-momo {
                 display: none;
                 width: 210px;
@@ -172,22 +206,23 @@
                   width: 150px;
                   height: 150px;
                   border-radius: 5px;
-                  border: 1px solid #00171F;
+                  border: 1px solid #00171f;
                 }
                 &.show {
                   display: block;
-                  background: #EBEEEF;
-                  border: 1px solid #EBEEEF;
+                  background: #ebeeef;
+                  border: 1px solid #ebeeef;
                   border-radius: 20px;
-                }  
-              } 
-            } 
+                }
+              }
+            }
           }
-        .delivery{
+        }
+        .delivery {
           .address {
             margin-top: 10px;
-            background: #EBEEEF;
-            border: 1px solid #EBEEEF;
+            background: #ebeeef;
+            border: 1px solid #ebeeef;
             border-radius: 20px;
             width: 600px;
             height: 120px;
@@ -196,12 +231,12 @@
               margin-left: 20px;
             }
             .changeaddress {
-              input{
+              input {
                 margin-left: 20px;
                 width: 500px;
                 padding-left: 20px;
-                color: #00171F;
-                border: 1px solid #EBEEEF;
+                color: #00171f;
+                border: 1px solid #ebeeef;
                 border-radius: 10px;
                 height: 50px;
               }
@@ -224,10 +259,10 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 align-content: center;
-                flex-direction: column;          
+                flex-direction: column;
                 &:hover {
-                  background: #0DB7EA;
-                  color: #FDFDFD;
+                  background: #0db7ea;
+                  color: #fdfdfd;
                 }
               }
             }
@@ -238,7 +273,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 12px;
-        border-left: 2px solid #EBEEEF;
+        border-left: 2px solid #ebeeef;
         gap: 17px;
         align-items: center;
         margin: 20px 0;
@@ -262,11 +297,11 @@
             font-weight: 500;
             font-size: 16px;
             line-height: 24px;
-            color: #FDFDFD;
+            color: #fdfdfd;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
             &:hover {
-              background: #0DB7EA;
+              background: #0db7ea;
             }
           }
         }
@@ -278,23 +313,23 @@
             font-weight: 700;
             font-size: 14px;
             line-height: 14px;
-            color: #00171F;
+            color: #00171f;
             border-collapse: collapse;
-            border-bottom: 2px solid #EBEEEF;
+            border-bottom: 2px solid #ebeeef;
           }
           td {
             font-style: normal;
             font-weight: 500;
             font-size: 12px;
             line-height: 18px;
-            color: #00171F;
+            color: #00171f;
             padding: 6px 0;
           }
           tr th:nth-child(4) td:nth-child(4) {
-            border-left: 1px solid #EBEEEF;
+            border-left: 1px solid #ebeeef;
           }
           tr:nth-child(3) td {
-            border-bottom: 2px solid #00171F;
+            border-bottom: 2px solid #00171f;
           }
 
           tr th:first-child {
@@ -444,7 +479,6 @@ $working-animation-color: #ea5023;
 }
 
 @keyframes clipMe {
-
   0%,
   100% {
     clip: rect(0px, $clip-size, $path-width, 0px);

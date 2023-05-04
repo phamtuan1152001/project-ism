@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 // @utility
 import { formatToCurrencyVND } from "@utility/common";
@@ -17,6 +18,7 @@ import { getLoadingCart } from "../../Modules/ProductDetail/Store/selectors";
 
 const CartInfo = ({ cartInfo }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const userInfo = useSelector(getUserData);
   const loadingCart = useSelector(getLoadingCart);
@@ -39,6 +41,10 @@ const CartInfo = ({ cartInfo }) => {
         },
       })
     );
+  };
+
+  const goToCheckout = () => {
+    history.push("/checkout");
   };
 
   return (
@@ -107,7 +113,9 @@ const CartInfo = ({ cartInfo }) => {
         </div>
       </div>
       <div className="cart-payment">
-        <Button className="btn-payment">Payment</Button>
+        <Button className="btn-payment" onClick={() => goToCheckout()}>
+          Payment
+        </Button>
       </div>
     </React.Fragment>
   );
