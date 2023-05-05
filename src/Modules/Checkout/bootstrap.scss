@@ -285,7 +285,7 @@
           justify-content: flex-start;
           button {
             display: inline-flex;
-            flex-direction: column;
+            // flex-direction: column;
             padding: 12px 28px 10px;
             margin-left: auto;
             gap: 10px;
@@ -356,8 +356,126 @@
 }
 
 .payment-wrapper {
-  height: 60vh;
   padding: 20px;
+  // height: 100%;
+
+  .payment-content {
+    background: #fdfdfd;
+    border: 1px solid #ebeeef;
+    border-radius: 20px;
+    // height: 60vh;
+
+    .select-method-payment {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__title {
+        font-family: "SVN-Gilroy";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #003459;
+        text-align: center;
+      }
+
+      .payment-qr {
+        // width: 300px;
+        // height: 500px;
+        margin-top: 16px;
+        width: 400px;
+        height: 600px;
+        .qr-image {
+          border-radius: 20px;
+          // width: 100%;
+          // height: auto;
+          width: 400px;
+          height: 600px;
+          object-fit: contain;
+        }
+      }
+
+      .btn-payment {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          background: #003459;
+          border-radius: 57px;
+          height: 48px;
+          padding: 0 40px;
+
+          span {
+            font-family: "SVN-Gilroy";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 24px;
+            color: #fdfdfd;
+          }
+
+          &:hover {
+            background: #fdfdfd;
+            span {
+              color: #002a48 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .order-payment-information {
+    height: 100%;
+    &__title {
+      font-family: "SVN-Gilroy";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 36px;
+      color: #003459;
+      text-align: center;
+    }
+
+    &__content {
+      &-box {
+        margin: 20px 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        h4 {
+          font-family: "SVN-Gilroy";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          color: #00171f;
+        }
+
+        p {
+          font-family: "SVN-Gilroy";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 18px;
+          color: #667479;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
   .payment-title {
     font-family: "SVN-Gilroy";
     font-style: normal;
