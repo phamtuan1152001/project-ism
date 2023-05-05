@@ -18,3 +18,8 @@ export const getDetailOrder = (payload) => {
   const { orderId } = payload || {};
   return apiMethod.get(API.GET_DETAIL_ORDER + `/${orderId}`);
 };
+
+export const deleteDetailOrder = (payload) => {
+  const { orderId } = payload || {};
+  return apiMethod.delete(API.DELETE_DETAIL_ORDER + `/${orderId}`);
+};

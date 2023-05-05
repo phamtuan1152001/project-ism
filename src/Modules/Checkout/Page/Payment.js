@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 // @service
-import { getDetailOrder } from "../Store/service";
+import { getDetailOrder, deleteDetailOrder } from "../Store/service";
 
 // @constants
 import { RETCODE_SUCCESS, SUCCESS } from "@configs/contants";
@@ -21,10 +21,14 @@ import { formatToCurrencyVND } from "@utility/common";
 
 const Payment = () => {
   const location = useLocation();
+  const history = useHistory();
+
   const { orderId } = location.state || {};
 
   const [loading, setLoading] = useState(false);
   const [detailOrder, setDetailOrder] = useState({});
+
+  const [loadingDelete, setLoadingDelete] = useState(false);
 
   const [value, setValue] = useState(1);
 
@@ -48,6 +52,23 @@ const Payment = () => {
       } finally {
         setLoading(false);
       }
+    }
+  };
+
+  const fetchDeleteDetailOrder = async () => {
+    try {
+      setLoadingDelete(true);
+      const payload = {
+        orderId,
+      };
+      const { data } = await deleteDetailOrder(payload);
+      if (data.retCode === RETCODE_SUCCESS) {
+        history.push("/checkout");
+      }
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+      setLoadingDelete(false);
     }
   };
 
@@ -96,7 +117,12 @@ const Payment = () => {
                       />
                     </div>
                     <div className="btn-payment">
-                      <Button>Cancel Payment</Button>
+                      <Button
+                        onClick={() => fetchDeleteDetailOrder()}
+                        loading={loadingDelete}
+                      >
+                        Cancel Payment
+                      </Button>
                       <Button>Confirm Payment</Button>
                     </div>
                   </div>
