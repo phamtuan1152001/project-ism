@@ -136,7 +136,14 @@ const Payment = () => {
                       <div className="order-payment-information__content-box">
                         <h4>Order detail:</h4>
                         <p>Id order: {detailOrder?._id}</p>
-                        <p>Status order: {detailOrder?.statusOrder}</p>
+                        <p>
+                          Status order:{" "}
+                          {detailOrder?.statusOrder === 0 && (
+                            <span className="text-warning">
+                              Pending payment
+                            </span>
+                          )}
+                        </p>
                         <p>
                           Method payment:{" "}
                           {detailOrder?.methodPayment === 0
