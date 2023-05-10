@@ -16,16 +16,36 @@ import banner from "../assets/images/herro-banner.png";
 
 import imageText from "../assets/images/image-2-9@2x.png";
 
+// @service
+import { getListProducts } from "../Store/service";
+
 const Home = () => {
+  useEffect(() => {
+    fetchGetListProducts();
+  }, []);
+
+  const fetchGetListProducts = async () => {
+    try {
+      const res = await getListProducts({
+        page: 1,
+        size: 6,
+      });
+      console.log("res", res);
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+    }
+  };
+
   return (
     <form className="homepage screen" name="form1" action="form1" method="post">
-      {/* <a href="javascript:SubmitForm('form1')">
+      <a href="javascript:SubmitForm('form1')">
         <img
           className="herro-banner bp1-animate-enter "
           src={banner}
           alt="herro-banner"
         />
-      </a> */}
+      </a>
       {/* <div className="frame52">
         <div className="flex-row">
           <div className="frame">

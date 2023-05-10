@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.css";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-
+// import "./newind.scss";
 // @svg and img
 import pet from "../assets/svg/PetAdoption.svg";
 import welcome from "../assets/svg/Welcome.svg";
