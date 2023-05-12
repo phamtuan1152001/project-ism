@@ -4,7 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 // @service
-import { getDetailOrder, deleteDetailOrder } from "../Store/service";
+import {
+  getDetailOrder,
+  deleteDetailOrder,
+  sendEmailConfirm,
+} from "../Store/service";
 
 // @constants
 import { RETCODE_SUCCESS, SUCCESS } from "@configs/contants";
@@ -25,10 +29,11 @@ const Payment = () => {
 
   const { orderId } = location.state || {};
 
-  const [loading, setLoading] = useState(false);
   const [detailOrder, setDetailOrder] = useState({});
 
+  const [loading, setLoading] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
+  const [loadingConfirm, setLoadingConfirm] = useState(false);
 
   const [value, setValue] = useState(1);
 
@@ -69,6 +74,26 @@ const Payment = () => {
       console.log("FETCH FAIL!", err);
     } finally {
       setLoadingDelete(false);
+    }
+  };
+
+  const fetchSendEmailConfirm = async () => {
+    try {
+      setLoadingConfirm(true);
+      const payload = {
+        orderId: detailOrder?._id,
+        userEmail: detailOrder?.infoOrder?.mail,
+        userName: detailOrder?.infoOrder?.fullname,
+      };
+      const { data } = await sendEmailConfirm(payload);
+      if (data.retCode === RETCODE_SUCCESS) {
+        history.push("/");
+      }
+      // console.log("data", data);
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+      setLoadingConfirm(false);
     }
   };
 
@@ -123,7 +148,12 @@ const Payment = () => {
                       >
                         Cancel Payment
                       </Button>
-                      <Button>Confirm Payment</Button>
+                      <Button
+                        onClick={() => fetchSendEmailConfirm()}
+                        loading={loadingConfirm}
+                      >
+                        Confirm Payment
+                      </Button>
                     </div>
                   </div>
                 </div>

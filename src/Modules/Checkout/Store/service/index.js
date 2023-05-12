@@ -23,3 +23,7 @@ export const deleteDetailOrder = (payload) => {
   const { orderId } = payload || {};
   return apiMethod.delete(API.DELETE_DETAIL_ORDER + `/${orderId}`);
 };
+
+export const sendEmailConfirm = (payload) => {
+  return apiMethod.post(API.SEND_EMAIL_CONFIRM, payload);
+};
