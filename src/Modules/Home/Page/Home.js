@@ -7,6 +7,7 @@ import { getListProducts } from "../Store/service";
 
 // @components
 import HomePart from "../Components/HomePart";
+import BoxFrame from "../Components/BoxFrame";
 
 // @antd
 import { Spin } from "antd";
@@ -50,6 +51,13 @@ const Home = () => {
             header="Take a look at some of our pets"
           />
         </Spin>
+        <BoxFrame
+          title={"One more friend"}
+          subtitle={"Thousands more fun!"}
+          description={
+            "Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!"
+          }
+        />
       </div>
     </div>
   );
