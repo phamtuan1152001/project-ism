@@ -123,10 +123,34 @@
 }
 
 .box-frame-wrapper {
-  padding: 16px;
+  padding: 50px 16px 0px 16px;
   background: #003459;
   border-radius: 20px;
   overflow: hidden;
+
+  &__imageBox {
+    position: relative;
+
+    .img-box {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-color {
+      position: absolute;
+      top: 130px;
+      right: -50px;
+      z-index: 0;
+      background: #002a48;
+      border-radius: 99px;
+      transform: rotate(28.25deg);
+      height: 787px;
+      width: 787px;
+    }
+  }
 
   &__contentBox {
     display: flex;

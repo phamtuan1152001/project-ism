@@ -9,9 +9,10 @@ const BoxFrame = ({ title, subtitle, description }) => {
     <div className="box-frame-wrapper">
       <div className="row">
         <div className="col-6">
-          <div className="d-flex flex-column justify-content-center align-items-center h-100">
+          <div className="d-flex flex-column justify-content-center align-items-start h-100">
             <div className="box-frame-wrapper__imageBox">
               <img src={BoxFrameLeft} alt="img-box" className="img-box" />
+              <div className="image-color" />
             </div>
           </div>
         </div>
