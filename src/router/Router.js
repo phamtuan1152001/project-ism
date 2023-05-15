@@ -23,6 +23,8 @@ import BlankLayout from "@layouts/BlankLayout";
 import Helmet from "react-helmet";
 import { useTranslation } from "react-i18next";
 
+import ScrollToTop from "../utility/hooks/ScrollToTop";
+
 const Router = ({ Routes }) => {
   // ** Hooks
   const { t } = useTranslation();
@@ -163,11 +165,14 @@ const Router = ({ Routes }) => {
   return (
     <AppRouter basename={process.env.REACT_APP_BASENAME}>
       {/* {ResolveRoutes()} */}
-      <Switch>
-        {ResolveRoutes()}
-        {/* NotFound Error page */}
-        <Route path="*" component={Error} />
-      </Switch>
+      <React.Fragment>
+        <ScrollToTop />
+        <Switch>
+          {ResolveRoutes()}
+          {/* NotFound Error page */}
+          <Route path="*" component={Error} />
+        </Switch>
+      </React.Fragment>
     </AppRouter>
   );
 };
