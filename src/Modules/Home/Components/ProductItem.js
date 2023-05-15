@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory, useLocation } from "react-router-dom";
 
 // @svg and img
 import imageText from "../assets/images/image-2-9@2x.png";
@@ -8,9 +9,24 @@ import { formatToCurrencyVND } from "@utility/common";
 
 const ProductItem = ({ detail }) => {
   // console.log("detail", detail);
-  const { name, image, gender, age, price } = detail || {};
+  const history = useHistory();
+
+  const { _id, name, image, gender, age, price } = detail || {};
+
+  const goToProductDetail = () => {
+    history.push({
+      pathname: "/product-detail",
+      state: {
+        productId: _id,
+      },
+    });
+  };
+
   return (
-    <div className="homepage-wrapper__content-body-product">
+    <div
+      className="homepage-wrapper__content-body-product"
+      onClick={() => goToProductDetail()}
+    >
       <div className="homepage-wrapper__content-body-product-img">
         <img src={image[0]?.url} alt="image-item" className="image-item" />
       </div>

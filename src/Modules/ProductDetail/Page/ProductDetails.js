@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
 import "../bootstrap.scss";
+
+import React, { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 
 // @components
 import SinglePro from "@src/Modules/ProductDetail/components/SingleProduct/SinglePro.js";
@@ -13,8 +15,13 @@ import { getDetailProduct } from "../Store/service";
 import { Spin } from "antd";
 
 const ProductDetails = () => {
+  const location = useLocation();
+
+  const { productId } = location.state || {};
+
   const [detailProduct, setDetailProduct] = useState({});
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     fetchDetailProduct();
   }, []);
@@ -23,7 +30,7 @@ const ProductDetails = () => {
     try {
       setLoading(true);
       const { data } = await getDetailProduct({
-        id: "643905b0e2f9d51f3740b64e",
+        id: productId,
       });
       if (data.retCode === 0) {
         setDetailProduct(data?.retData);
