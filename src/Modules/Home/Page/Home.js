@@ -8,6 +8,7 @@ import { getListProducts } from "../Store/service";
 // @components
 import HomePart from "../Components/HomePart";
 import BoxFrame from "../Components/BoxFrame";
+import PetKnowledge from "../Components/PetKnowledge";
 
 // @antd
 import { Spin } from "antd";
@@ -57,6 +58,10 @@ const Home = () => {
           description={
             "Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!"
           }
+        />
+        <PetKnowledge
+          title="You already know ?"
+          header="Useful pet knowledge"
         />
       </div>
     </div>
