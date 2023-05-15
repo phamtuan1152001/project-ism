@@ -9,6 +9,7 @@ import { getListProducts } from "../Store/service";
 import HomePart from "../Components/HomePart";
 import BoxFrame from "../Components/BoxFrame";
 import PetKnowledge from "../Components/PetKnowledge";
+import Adoption from "../Components/Adoptions";
 
 // @antd
 import { Spin } from "antd";
@@ -62,6 +63,13 @@ const Home = () => {
         <PetKnowledge
           title="You already know ?"
           header="Useful pet knowledge"
+        />
+        <Adoption
+          title={"Adoption"}
+          subtitle={"We need help. so do they."}
+          description={
+            "Adopt a pet and give it a home,it will be love you back unconditionally."
+          }
         />
       </div>
     </div>

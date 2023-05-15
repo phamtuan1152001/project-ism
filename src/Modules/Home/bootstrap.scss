@@ -184,6 +184,14 @@
   overflow: hidden;
   margin-top: 30px;
 
+  &.adoption-box {
+    background: #ffb775;
+    border-radius: 20px;
+    padding-top: 0;
+    // transform: matrix(-1, 0, 0, 1, 0, 0);
+    margin-bottom: 30px;
+  }
+
   &__imageBox {
     position: relative;
 
@@ -205,6 +213,20 @@
       transform: rotate(28.25deg);
       height: 787px;
       width: 787px;
+
+      &.adoption-color-right {
+        top: 170px;
+        right: -230px;
+        background: linear-gradient(
+          102.87deg,
+          #fceed5 6.43%,
+          #fceed5 78.33%,
+          #ffe7ba 104.24%
+        );
+        opacity: 0.3;
+        border-radius: 99px;
+        transform: matrix(-0.88, 0.47, 0.47, 0.88, 0, 0);
+      }
     }
   }
 
@@ -214,6 +236,14 @@
     align-items: flex-end;
     padding: 0px 70px;
     position: relative;
+
+    &.contentBox-adoption {
+      align-items: flex-start;
+
+      p {
+        text-align: left;
+      }
+    }
 
     h2 {
       font-family: "SVN-Gilroy";
@@ -286,6 +316,14 @@
       width: 782.29px;
       height: 635px;
       overflow: hidden;
+
+      &.adoption-color-left {
+        top: -300px;
+        right: -50px;
+        background: #fceed5;
+        border-radius: 99px;
+        transform: matrix(-0.9, 0.43, 0.43, 0.9, 0, 0);
+      }
     }
   }
 }
