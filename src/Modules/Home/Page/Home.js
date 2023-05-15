@@ -2,6 +2,9 @@ import "../bootstrap.scss";
 
 import React, { useEffect, useState } from "react";
 
+// svg and img
+import Banner from "../assets/images/banner.png";
+
 // @service
 import { getListProducts } from "../Store/service";
 
@@ -45,6 +48,32 @@ const Home = () => {
 
   return (
     <div className="homepage-wrapper">
+      <div className="banner-wrapper">
+        <div className="banner-wrapper__content">
+          <div className="row">
+            <div className="col-6">
+              <div className="banner-wrapper__content-info">
+                <h2>One more friend</h2>
+                <h3>Thousands more fun!</h3>
+                <p>
+                  Having a pet means you have more joy, a new friend, a happy
+                  person who will always be with you to have fun. We have 200+
+                  different pets that can meet your needs!
+                </p>
+                <div className="img-left-orange" />
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="banner-wrapper__content-imgBox">
+                <img src={Banner} alt="banner-img" className="banner-img" />
+                <div className="img-right-orange" />
+                <div className="img-right-blue" />
+              </div>
+            </div>
+          </div>
+          <div className="banner-background-color" />
+        </div>
+      </div>
       <div className="container">
         <Spin spinning={loading}>
           <HomePart
