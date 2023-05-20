@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import QRcode from "@src/Modules/Checkout/assets/images/qr.png";
+import { useSelector } from "react-redux";
 
 // @antd
 import { Form, Input, Radio, Space } from "antd";
@@ -7,8 +8,28 @@ import { Form, Input, Radio, Space } from "antd";
 // @utility
 import { emailRegex, phoneRegex } from "@utility/Utils";
 
+// @selector
+import { getUserData } from "@store/user/selector";
+
 const PaymentForm = ({ setInfoUser = () => {}, setIsDisable = () => {} }) => {
+  const userInfo = useSelector(getUserData);
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    onInitData();
+  }, []);
+
+  const onInitData = () => {
+    if (userInfo && Object.keys(userInfo).length > 0) {
+      const { fullName, username, phone, address } = userInfo || {};
+      form.setFieldsValue({
+        fullname: fullName,
+        mail: username,
+        phone,
+        address,
+      });
+    }
+  };
 
   const onFieldsChange = () => {
     const hasErrors = form.getFieldsError().some(({ errors }) => errors.length);

@@ -44,7 +44,11 @@ const CartInfo = ({ cartInfo }) => {
   };
 
   const goToCheckout = () => {
-    history.push("/checkout");
+    if (userInfo && Object.keys(userInfo).length > 0) {
+      history.push("/checkout");
+    } else {
+      history.push("/login");
+    }
   };
 
   return (
