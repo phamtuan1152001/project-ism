@@ -14,3 +14,8 @@ export const getListProducts = (payload) => {
   const { page, size } = payload || {};
   return apiMethod.post(API.GET_LIST_PRODUCTS, { page, size });
 };
+
+export const getListNews = (payload) => {
+  const { page, size } = payload || {};
+  return apiMethod.post(API.GET_LIST_NEWS, { page, size });
+};

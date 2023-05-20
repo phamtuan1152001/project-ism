@@ -33,7 +33,7 @@ const BlankLayout = ({ children, ...rest }) => {
             </div>
           </div>
         </div>
-        <GoTop scrollStepInPx="50" delayInMs="16.66" />
+        {/* <GoTop scrollStepInPx="50" delayInMs="16.66" /> */}
       </div>
       <ToastContainer
         position="top-left"
