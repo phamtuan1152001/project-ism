@@ -5,4 +5,5 @@ export default [
   { key: "Category" },
   { key: "Cart" },
   { key: "Checkout" },
+  { key: "Profile" },
 ];
