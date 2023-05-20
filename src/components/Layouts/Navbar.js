@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 // @components
 import CustomLogo from "../CustomLogo";
 import CartInfo from "./CartInfo";
+import AvatarInfo from "./AvatarInfo";
 // import SideDrawer from "./SideDrawer";
 
 // @svg
@@ -18,13 +19,17 @@ import { getUserData } from "@store/user/selector";
 import { getDataCart } from "../../Modules/ProductDetail/Store/selectors";
 
 // @antd
-import { Popover } from "antd";
+import { Popover, Avatar, Space } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 const Navbar = ({ router = {}, products = [] }) => {
   const history = useHistory();
+
   const cartInfo = useSelector(getDataCart);
+  const userInfo = useSelector(getUserData);
+
   const { listCart } = cartInfo || {};
-  // console.log("cartInfo", cartInfo);
+
   return (
     <>
       <header className="header-desktop">
@@ -52,23 +57,47 @@ const Navbar = ({ router = {}, products = [] }) => {
           </div>
           <div className="frame46">
             <div className="frame3">
-              <div className="search-navbar">
+              {/* <div className="search-navbar">
                 <input
                   type="text"
                   name="navbar-search-input"
                   className="nav-search-text"
                   placeholder="Search Something Here!!!"
                 />
-              </div>
+              </div> */}
 
-              <button className="log-navbar btn" onClick="">
-                <div
-                  className="log-nav-text"
-                  onClick={() => history.push("/login")}
+              {userInfo && Object.keys(userInfo).length > 0 ? (
+                <Popover
+                  trigger={"hover"}
+                  title=""
+                  content={<AvatarInfo />}
+                  className="avatar-wrapper"
+                  getPopupContainer={() => document.querySelector(".frame3")}
+                  placement="bottomLeft"
                 >
-                  Login
-                </div>
-              </button>
+                  <Space wrap size={16} className="cursor-pointer">
+                    <Avatar
+                      size={"large"}
+                      icon={<UserOutlined />}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    />
+                  </Space>
+                </Popover>
+              ) : (
+                <button className="log-navbar btn" onClick="">
+                  <div
+                    className="log-nav-text"
+                    onClick={() => history.push("/login")}
+                  >
+                    Login
+                  </div>
+                </button>
+              )}
               <Popover
                 className="cart-wrapper"
                 content={<CartInfo cartInfo={cartInfo} />}
