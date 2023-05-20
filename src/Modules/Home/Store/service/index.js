@@ -19,3 +19,8 @@ export const getListNews = (payload) => {
   const { page, size } = payload || {};
   return apiMethod.post(API.GET_LIST_NEWS, { page, size });
 };
+
+export const getDetailNews = (payload) => {
+  const { idNews } = payload || {};
+  return apiMethod.get(API.GET_DETAIL_NEWS + `/${idNews}`);
+};

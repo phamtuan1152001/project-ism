@@ -17,7 +17,21 @@ export default {
       },
       props: {
         title: "HomePage | Monito",
-        titleI18n: "Home:title",
+        titleI18n: "HomePage | Monito",
+        headerStyle: "fill",
+        exact: true,
+      },
+    },
+    {
+      url: "news",
+      component: "Page/News",
+
+      meta: {
+        authRoute: true,
+      },
+      props: {
+        title: "News | Monito",
+        titleI18n: "News | Monito",
         headerStyle: "fill",
         exact: true,
       },

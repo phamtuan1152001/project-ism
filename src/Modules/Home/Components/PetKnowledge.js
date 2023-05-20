@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 
 // @antd
 import { Button, Spin } from "antd";
@@ -17,6 +18,8 @@ import { RETCODE_SUCCESS, SUCCESS } from "@configs/contants";
 
 const PetKnowledge = ({ title, header, listProducts = [] }) => {
   // console.log("listProducts", listProducts);
+
+  const history = useHistory();
 
   const [listNews, setListNews] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -43,6 +46,15 @@ const PetKnowledge = ({ title, header, listProducts = [] }) => {
     }
   };
 
+  const goToNewDetail = (idNews) => {
+    history.push({
+      pathname: "/news",
+      state: {
+        idNews,
+      },
+    });
+  };
+
   return (
     <div className="homepage-wrapper__content">
       <div className="homepage-wrapper__content-header">
@@ -64,7 +76,10 @@ const PetKnowledge = ({ title, header, listProducts = [] }) => {
           <div className="row">
             {listNews.map((item) => {
               return (
-                <div className="col-4">
+                <div
+                  className="col-4 cursor-pointer"
+                  onClick={() => goToNewDetail(item._id)}
+                >
                   <NewItem data={item} />
                 </div>
               );
