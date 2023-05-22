@@ -42,16 +42,16 @@ const FilterZone = ({ fetchGetListProduct = () => {} }) => {
   const [searchData, setSearchData] = React.useState("");
 
   useEffect(() => {
-    if (searchData) {
-      // console.log("search data", searchData);
+    if (!!searchData) {
       const hasValues = form.getFieldsValue();
       fetchGetListProduct(hasValues);
+    } else {
+      fetchGetListProduct();
     }
   }, [searchData]);
 
   const handleSeachItem = (e) => {
     const search = Object.values(form.getFieldsValue(e[0].name))[0];
-    // const search = e.target.value;
     setInput(search);
     setPrevSearch(search);
     if (timeoutId) {
