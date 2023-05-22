@@ -55,7 +55,7 @@ const CartInfo = ({ cartInfo }) => {
     <React.Fragment>
       <div className="cart-content">
         <Spin spinning={loadingCart}>
-          {listCart.map((item) => {
+          {listCart?.map((item) => {
             return (
               <div
                 className="cart-content__item"

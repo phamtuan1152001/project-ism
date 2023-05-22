@@ -203,12 +203,44 @@ const Payment = () => {
                         <p>List products:</p>
                         {detailOrder?.cartId?.listCart?.map((item) => {
                           return (
-                            <ul>
-                              <li>
-                                {item?._id} - x{item?.totalItem} -{" "}
-                                {formatToCurrencyVND(item?.totalPrice)}
-                              </li>
-                            </ul>
+                            <div className="row">
+                              <div className="col-5">
+                                <div className="d-flex flex-column justify-content-center align-items-center">
+                                  <img
+                                    style={{
+                                      width: "100%",
+                                      height: "auto",
+                                      objectFit: "contain",
+                                    }}
+                                    src={item?.image[0].url}
+                                    className="image-box"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-7">
+                                <div className="d-flex flex-column justify-content-center align-items-start h-100">
+                                  <h4 className="mb-1">
+                                    {item?.name} - x{item?.totalItem}
+                                  </h4>
+                                  <p className="mb-1 ms-0">
+                                    {" "}
+                                    {formatToCurrencyVND(item?.totalPrice)}
+                                  </p>
+                                  <p
+                                    style={{ textTransform: "capitalize" }}
+                                    className="mb-1 ms-0"
+                                  >
+                                    Gender: {item.gender}
+                                  </p>
+                                  <p
+                                    style={{ textTransform: "capitalize" }}
+                                    className="mb-1 ms-0"
+                                  >
+                                    Age: {item.age}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
                           );
                         })}
                       </div>
