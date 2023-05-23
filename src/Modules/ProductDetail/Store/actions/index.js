@@ -27,3 +27,10 @@ export function deleteItemCart(payload) {
     payload,
   };
 }
+
+export function resetCart(payload) {
+  return {
+    type: Actions.RESET_CART,
+    payload,
+  };
+}

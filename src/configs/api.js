@@ -13,6 +13,8 @@ export default {
   District: "/District",
   SchoolClass: "/SchoolClass",
 
+  CHECK_EXIST_CART: "/cart/check-cart-exist",
+
   /*Common*/
   GET_COMMON_GET_CITY: "/Province",
   GET_COMMON_GET_DISTRICT: "/District",

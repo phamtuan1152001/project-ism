@@ -18,6 +18,7 @@ import { Button, notification, Form, Modal } from "antd";
 
 // @service
 import { signIn, signUp, confirmActiveAccount } from "../Store/service";
+import { checkExistCart } from "@store/user/service";
 
 // @helpers
 import { setAccessToken } from "../helpers";
@@ -28,6 +29,7 @@ import { RETCODE_SUCCESS } from "@configs/contants";
 
 // @actions
 import { actions as ActionsUser } from "@store/user/reducer";
+import { getListCart } from "../../ProductDetail/Store/actions";
 
 // @Utility
 import { phoneRegex } from "@utility/Utils";
@@ -52,6 +54,16 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const fetchCheckExistCart = async (id) => {
+    try {
+      const { data } = await checkExistCart({ userId: id });
+      return data;
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+    }
+  };
+
   const fetchSignIn = async () => {
     try {
       setLoading(true);
@@ -64,14 +76,22 @@ const Login = () => {
         await setAccessToken(accessToken);
         apiMethod.defaults.headers.common["Authorization"] = accessToken;
         await dispatch(ActionsUser.setInfoData(data?.retData));
+        const isCart = await fetchCheckExistCart(data?.retData?.id);
+        if (isCart?.retCode === 0) {
+          dispatch(
+            getListCart({
+              userId: data?.retData?.id,
+            })
+          );
+        }
         notification.success({
           message: "Successfully",
           description: data?.retText,
           duration: 2,
         });
         setTimeout(() => {
-          // window.location.reload();
-          history.push("/");
+          window.location.href = "/";
+          // history.push("/");
         }, 2000);
       } else {
         notification.error({
