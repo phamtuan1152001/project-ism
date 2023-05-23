@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 // @antd
 import { Button } from "antd";
@@ -10,7 +11,8 @@ import { ArrowRightViewMore } from "../assets/svg";
 import ProductItem from "./ProductItem";
 
 const HomePart = ({ title, header, listProducts = [] }) => {
-  // console.log("listProducts", listProducts);
+  const history = useHistory();
+
   return (
     <div className="homepage-wrapper__content">
       <div className="homepage-wrapper__content-header">
@@ -19,7 +21,10 @@ const HomePart = ({ title, header, listProducts = [] }) => {
           <h4>{header}</h4>
         </div>
         <div className="homepage-wrapper__content-header-right">
-          <Button className="view-more">
+          <Button
+            className="view-more"
+            onClick={() => history.push("/cate-gory")}
+          >
             <div className="btn-title">View more</div>
             <div>
               <ArrowRightViewMore />

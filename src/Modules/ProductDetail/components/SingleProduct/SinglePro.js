@@ -40,16 +40,20 @@ const SinglePro = ({ detailProduct }) => {
   // console.log("userInfo", loadingCart);
 
   const handleAddCart = () => {
-    dispatch(
-      createCart({
-        userId: userInfo?.id,
-        cartProduct: {
-          ...detailProduct,
-          totalItem: 1,
-          totalPrice: price,
-        },
-      })
-    );
+    if (userInfo && Object.keys(userInfo).length > 0) {
+      dispatch(
+        createCart({
+          userId: userInfo?.id,
+          cartProduct: {
+            ...detailProduct,
+            totalItem: 1,
+            totalPrice: price,
+          },
+        })
+      );
+    } else {
+      window.location.href = "/login";
+    }
   };
 
   return (

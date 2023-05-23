@@ -24,9 +24,9 @@ const BoxFrame = ({ title, subtitle, description }) => {
               <h2>{title}</h2>
               <h3>{subtitle}</h3>
               <p>{description}</p>
-              <div className="btn-explore-box">
+              {/* <div className="btn-explore-box">
                 <Button>Explore now</Button>
-              </div>
+              </div> */}
               <div className="box-color" />
             </div>
           </div>
