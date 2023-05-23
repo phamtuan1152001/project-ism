@@ -124,38 +124,54 @@ const Payment = () => {
             ) : (
               <div className="row">
                 <div className="col-6 p-3">
-                  <div className="select-method-payment">
-                    <h3 className="select-method-payment__title">
-                      Select your payment
-                    </h3>
-                    <div className="d-flex flex-row justify-content-center align-items-center">
-                      <Radio.Group onChange={onChange} value={value}>
-                        <Radio value={1}>Credit card</Radio>
-                        <Radio value={2}>Momo</Radio>
-                      </Radio.Group>
+                  {detailOrder?.statusOrder === 0 ? (
+                    detailOrder?.methodPayment === 0 ? (
+                      <div className="select-method-payment">
+                        <h3 className="select-method-payment__title">
+                          Select your payment
+                        </h3>
+                        <div className="d-flex flex-row justify-content-center align-items-center">
+                          <Radio.Group onChange={onChange} value={value}>
+                            <Radio value={1}>Credit card</Radio>
+                            <Radio value={2}>Momo</Radio>
+                          </Radio.Group>
+                        </div>
+                        <div className="payment-qr">
+                          <img
+                            src={value === 1 ? CREDIT_CARD : MOMO}
+                            className="qr-image"
+                            alt="qr-image"
+                          />
+                        </div>
+                        <div className="btn-payment">
+                          <Button
+                            onClick={() => fetchDeleteDetailOrder()}
+                            loading={loadingDelete}
+                          >
+                            Cancel Payment
+                          </Button>
+                          <Button
+                            onClick={() => fetchSendEmailConfirm()}
+                            loading={loadingConfirm}
+                          >
+                            Confirm Payment
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="d-flex flex-column justify-content-center align-items-center h-100">
+                        <h1 className="text-center text-primary">
+                          Direct payment upon receipt
+                        </h1>
+                      </div>
+                    )
+                  ) : (
+                    <div className="d-flex flex-column justify-content-center align-items-center h-100">
+                      <h1 className="text-center text-primary">
+                        You have already paid or canceled payment for this order
+                      </h1>
                     </div>
-                    <div className="payment-qr">
-                      <img
-                        src={value === 1 ? CREDIT_CARD : MOMO}
-                        className="qr-image"
-                        alt="qr-image"
-                      />
-                    </div>
-                    <div className="btn-payment">
-                      <Button
-                        onClick={() => fetchDeleteDetailOrder()}
-                        loading={loadingDelete}
-                      >
-                        Cancel Payment
-                      </Button>
-                      <Button
-                        onClick={() => fetchSendEmailConfirm()}
-                        loading={loadingConfirm}
-                      >
-                        Confirm Payment
-                      </Button>
-                    </div>
-                  </div>
+                  )}
                 </div>
                 <div className="col-6 p-3">
                   <div className="order-payment-information">

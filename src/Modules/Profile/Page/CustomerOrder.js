@@ -68,6 +68,16 @@ const CustomerOrder = () => {
     }
   };
 
+  const goToDetailOrder = (order) => {
+    // console.log("order", order);
+    history.push({
+      pathname: "/checkout/payment",
+      state: {
+        orderId: order?._id,
+      },
+    });
+  };
+
   const columnsTable = [
     {
       title: "Code order",
@@ -168,6 +178,21 @@ const CustomerOrder = () => {
         } else {
           return "Delivery to customer's home";
         }
+      },
+    },
+    {
+      title: "Action",
+      dataIndex: "action",
+      key: "action",
+      render: (_, record) => {
+        return (
+          <span
+            className="text-primary cursor-pointer"
+            onClick={() => goToDetailOrder(record)}
+          >
+            More detail
+          </span>
+        );
       },
     },
   ];
