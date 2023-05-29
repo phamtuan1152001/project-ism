@@ -46,12 +46,12 @@ const Navbar = ({ router = {}, products = [] }) => {
                 <li className="frame-text">
                   <a href="/">Category</a>
                 </li>
-                <li className="frame-text">
+                {/* <li className="frame-text">
                   <a href="/">About</a>
                 </li>
                 <li className="frame-text">
                   <a href="/">Contact</a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

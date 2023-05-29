@@ -4,16 +4,21 @@ import React from "react";
 import imageText from "../assets/images/image-2-9@2x.png";
 
 const NewItem = ({ data }) => {
-  // console.log("Data", data);
-  const { title, description, content } = data || {};
+  console.log("Data", data);
+  const { title, description, content, linkImage } = data || {};
   return (
     <div className="new-content">
       <div className="new-content__img">
-        <img src={imageText} alt="new-img" className="new-img" />
+        <img src={linkImage} alt="new-img" className="new-img" />
       </div>
       <div className="new-content__info">
         <h3>{title}</h3>
-        <p>{content}</p>
+        {/* <p>{content}</p> */}
+        {/* <p
+          dangerouslySetInnerHTML={{
+            __html: content,
+          }}
+        /> */}
       </div>
     </div>
   );
