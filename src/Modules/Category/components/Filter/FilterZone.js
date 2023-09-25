@@ -18,7 +18,7 @@ const FilterZone = ({ fetchGetListProduct = () => {} }) => {
   //   //   gender,
   //   //   ...hasValues,
   //   // };
-  //   if (hasValues && Object.keys(hasValues).length > 0) {
+  //   if (hasValues && keys(hasValues).length > 0) {
   //     fetchGetListProduct(hasValues);
   //   }
   // };

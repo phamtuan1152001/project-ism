@@ -4,7 +4,7 @@ import React from "react";
 import imageText from "../assets/images/image-2-9@2x.png";
 
 const NewItem = ({ data }) => {
-  console.log("Data", data);
+  // console.log("Data", data);
   const { title, description, content, linkImage } = data || {};
   return (
     <div className="new-content">
