@@ -50,37 +50,22 @@
           align-items: flex-start;
           padding: 0px;
           gap: 48px;
-
+          list-style-type: none;
           height: 24px;
-
-          /* Inside auto layout */
-
           flex: none;
           order: 1;
           flex-grow: 0;
-        }
 
-        .frame-text {
-          width: 80px;
-          height: 24px;
-
-          /* Body/16px Bold */
-
-          font-family: "SVN-Gilroy";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 24px;
-          /* identical to box height, or 150% */
-
-          /* Primary Color/Dark Blue */
-          color: #003459;
-
-          /* Inside auto layout */
-
-          flex: none;
-          order: 0;
-          flex-grow: 0;
+          .frame-text {
+            a {
+              font-family: "SVN-Gilroy";
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0em;
+              color: #003459;
+            }
+          }
         }
       }
     }
@@ -246,22 +231,12 @@
           align-items: center;
           padding: 0px;
           gap: 10px;
-
-          height: 30px;
-
           background: linear-gradient(
             102.87deg,
             #fceed5 6.43%,
             #fceed5 78.33%,
             #ffe7ba 104.24%
           );
-
-          /* Inside auto layout */
-
-          flex: none;
-          order: 1;
-          align-self: stretch;
-          flex-grow: 0;
           position: relative;
 
           .tag-cart {

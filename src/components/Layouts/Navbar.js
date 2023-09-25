@@ -46,25 +46,25 @@ const Navbar = ({ router = {}, products = [] }) => {
                 <li className="frame-text">
                   <a href="/">Category</a>
                 </li>
-                {/* <li className="frame-text">
+                <li className="frame-text">
                   <a href="/">About</a>
                 </li>
                 <li className="frame-text">
                   <a href="/">Contact</a>
-                </li> */}
+                </li>
               </ul>
             </div>
           </div>
           <div className="frame46">
             <div className="frame3">
-              {/* <div className="search-navbar">
+              <div className="search-navbar">
                 <input
                   type="text"
                   name="navbar-search-input"
                   className="nav-search-text"
                   placeholder="Search Something Here!!!"
                 />
-              </div> */}
+              </div>
 
               {userInfo && Object.keys(userInfo).length > 0 ? (
                 <Popover

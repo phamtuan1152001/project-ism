@@ -74,11 +74,12 @@ const PetKnowledge = ({ title, header, listProducts = [] }) => {
       <div className="homepage-wrapper__content-body">
         <Spin spinning={loading} size="large">
           <div className="row">
-            {listNews.map((item) => {
+            {listNews.map((item, index) => {
               return (
                 <div
                   className="col-4 cursor-pointer"
                   onClick={() => goToNewDetail(item._id)}
+                  key={index}
                 >
                   <NewItem data={item} />
                 </div>
