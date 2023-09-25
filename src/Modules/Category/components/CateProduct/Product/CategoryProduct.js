@@ -1,11 +1,23 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 // @utility
 import { formatToCurrencyVND } from "@utility/common";
 
-const CategoryProduct = ({ name, gender, age, price, image }) => {
+const CategoryProduct = ({ _id, name, gender, age, price, image }) => {
+  const history = useHistory();
+
+  const goToProductDetail = () => {
+    history.push({
+      pathname: "/product-detail",
+      state: {
+        productId: _id,
+      },
+    });
+  };
+
   return (
-    <div className="frame">
+    <div className="frame" onClick={() => goToProductDetail()}>
       <div className="col-4">
         <img src={image[0].url} />
       </div>
